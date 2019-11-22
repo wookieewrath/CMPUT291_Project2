@@ -4,7 +4,7 @@ import xml.etree.ElementTree as ET
 def main():
     # Load the input XML file into Python3 as an Element Tree.
     # Create a tree and root object to navigate the file, and a count object to dictate the summation of elements.
-    file = input("Please print the name of the XML file")
+    file = input("Please print the name of the XML file: ")
     tree = ET.parse(file)
     root = tree.getroot()
     count = len(tree.findall('mail'))
