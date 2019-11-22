@@ -9,6 +9,22 @@ def main():
     root = tree.getroot()
     count = len(tree.findall('mail'))
 
+#Creates terms.txt
+length = len(tree.findall("mail"))
+alphabet = set('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-_0123456789')
+terms = open("terms.txt", "w+")
+for x in range(length-1):
+    if root[x][4].text is not None:
+        string = root[x][4].text.split()
+        for y in string:
+            if (len(''.join(filter(alphabet.__contains__, y)).lower()) > 2):
+                terms.write("s-" + ''.join(filter(alphabet.__contains__, y)).lower() + ":" + root[x][0].text + "\n")
+    if root[x][7].text is not None:
+        string = root[x][7].text.split()
+        for y in string:
+            if(len(''.join(filter(alphabet.__contains__, y)).lower())>2):
+                terms.write("b-" + ''.join(filter(alphabet.__contains__, y)).lower() + ":" + root[x][0].text + "\n")
+
 #Creates the "dates.txt" file from the XML input using the following format:
 #"date":"row_id"
     date_file = open("dates.txt","w+")      
@@ -33,3 +49,4 @@ emails_file.close()
 
 if __name__ == "__main__":
     main()
+    
