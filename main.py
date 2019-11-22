@@ -1,9 +1,9 @@
 import xml.etree.ElementTree as ET
 
 def main():
-    print(" Hello World ^_^ ")
 
-    tree = ET.parse('10.xml')
+    file = input("Please print the name of the XML file")
+    tree = ET.parse(file)
     root = tree.getroot()
     count = len(tree.findall('mail'))
 
@@ -15,7 +15,7 @@ def main():
         body = x.find('body').text
         date_file.write("%s: %s\n" %(date,row_id))
                            
-date_file.close()
+    date_file.close()
 
 if __name__ == "__main__":
     main()
