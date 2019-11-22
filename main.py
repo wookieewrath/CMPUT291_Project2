@@ -47,6 +47,14 @@ def main():
         emails_file.write("from-%s:%s\n" % (from_address, row_id))
         emails_file.write("to-%s:%s\n" % (to_address, row_id))
     emails_file.close()
+    
+    
+    
+    #sorting files for indexing, removing duplicate rows
+    os.system('sort dates.txt | uniq')
+    os.system('sort recs.txt | uniq')
+    os.system('sort emails.txt | uniq')
+    os.system('sort terms.txt | uniq')
 
 if __name__ == "__main__":
     main()
