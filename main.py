@@ -13,6 +13,9 @@ def main():
     '''******************************************************************************************************
     *                                           Create terms.txt                                            *
     ******************************************************************************************************'''
+    # Format:
+    # s-"subject_term":"row_id"
+    # b-"body_term":"row_id"
     length = len(tree.findall("mail"))
     alphabet = set('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-_0123456789')
     terms = open("terms.txt", "w+")
