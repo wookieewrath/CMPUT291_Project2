@@ -1,5 +1,5 @@
 import xml.etree.ElementTree as ET
-import os
+import re
 
 def main():
     # Load the input XML file into Python3 as an Element Tree.
@@ -9,19 +9,18 @@ def main():
     root = tree.getroot()
     count = len(tree.findall('mail'))
 
-
     # Creates terms.txt
     length = len(tree.findall("mail"))
     alphabet = set('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-_0123456789')
     terms = open("terms.txt", "w+")
-    for x in range(length - 1):
+    for x in range(length):
         if root[x][4].text is not None:
-            string = root[x][4].text.split()
+            string = re.split(r"[^0-9a-zA-Z\_\-]", root[x][4].text)
             for y in string:
                 if (len(''.join(filter(alphabet.__contains__, y)).lower()) > 2):
                     terms.write("s-" + ''.join(filter(alphabet.__contains__, y)).lower() + ":" + root[x][0].text + "\n")
         if root[x][7].text is not None:
-            string = root[x][7].text.split()
+            string = re.split(r"[^0-9a-zA-Z\_\-]", root[x][7].text)
             for y in string:
                 if (len(''.join(filter(alphabet.__contains__, y)).lower()) > 2):
                     terms.write("b-" + ''.join(filter(alphabet.__contains__, y)).lower() + ":" + root[x][0].text + "\n")
@@ -38,7 +37,7 @@ def main():
 
     # Creates the "emails.txt" file from the XML input using the following format:
     # from-"from_address":"row_id"
-    # to-"to_address":"row_id"    
+    # to-"to_address":"row_id"
     emails_file = open("emails.txt", "w+")
     for x in root.findall('mail'):
         from_address = x.find('from').text
@@ -47,14 +46,7 @@ def main():
         emails_file.write("from-%s:%s\n" % (from_address, row_id))
         emails_file.write("to-%s:%s\n" % (to_address, row_id))
     emails_file.close()
-    
-    
-    
-    #sorting files for indexing, removing duplicate rows
-    os.system('sort dates.txt | uniq')
-    os.system('sort recs.txt | uniq')
-    os.system('sort emails.txt | uniq')
-    os.system('sort terms.txt | uniq')
+
 
 if __name__ == "__main__":
     main()
