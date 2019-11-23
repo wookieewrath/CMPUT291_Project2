@@ -1,3 +1,0 @@
-def reformat():
-
-    pass

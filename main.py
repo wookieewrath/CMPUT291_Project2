@@ -7,7 +7,6 @@ def main():
     file = input("Please print the name of the XML file: ")
     tree = ET.parse(file)
     root = tree.getroot()
-    count = len(tree.findall('mail'))
 
     # Creates terms.txt
     length = len(tree.findall("mail"))
@@ -33,7 +32,7 @@ def main():
         date = x.find('date').text
         row_id = x.find('row').text
         body = x.find('body').text
-        date_file.write("%s: %s\n" % (date, row_id))
+        date_file.write("%s:%s\n" % (date, row_id))
     date_file.close()
 
     # Creates the "emails.txt" file from the XML input using the following format:
