@@ -1,5 +1,6 @@
 import xml.etree.ElementTree as ET
 import re
+import os
 
 def main():
     # Load the input XML file into Python3 as an Element Tree.
@@ -47,6 +48,11 @@ def main():
         emails_file.write("from-%s:%s\n" % (from_address, row_id))
         emails_file.write("to-%s:%s\n" % (to_address, row_id))
     emails_file.close()
+    
+    os.system('sort -o dates.txt dates.txt | uniq')
+    os.system('sort -o emails.txt emails.txt | uniq')
+    os.system('sort -o recs.txt recs.txt | uniq')
+    os.system('sort -o terms.txt terms.txt | uniq')
 
 
 if __name__ == "__main__":
