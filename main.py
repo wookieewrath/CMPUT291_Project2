@@ -2,6 +2,7 @@ import xml.etree.ElementTree as ET
 import re
 import os
 
+
 def main():
     # Load the input XML file into Python3 as an Element Tree.
     # Create a tree and root object to navigate the file, and a count object to dictate the summation of elements.
@@ -9,7 +10,9 @@ def main():
     tree = ET.parse(file)
     root = tree.getroot()
 
-    # Creates terms.txt
+    '''******************************************************************************************************
+    *                                           Create terms.txt                                            *
+    ******************************************************************************************************'''
     length = len(tree.findall("mail"))
     alphabet = set('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-_0123456789')
     terms = open("terms.txt", "w+")
@@ -26,8 +29,10 @@ def main():
                     terms.write("b-" + ''.join(filter(alphabet.__contains__, y)).lower() + ":" + root[x][0].text + "\n")
     terms.close()
 
-    # Creates the "dates.txt" file from the XML input using the following format:
-    # "date":"row_id"
+    '''******************************************************************************************************
+    *                                           Create dates.txt                                            *
+    ******************************************************************************************************'''
+    # Format: "date":"row_id"
     date_file = open("dates.txt", "w+")
     for x in root.findall('mail'):
         date = x.find('date').text
@@ -36,7 +41,10 @@ def main():
         date_file.write("%s:%s\n" % (date, row_id))
     date_file.close()
 
-    # Creates the "emails.txt" file from the XML input using the following format:
+    '''******************************************************************************************************
+    *                                          Create emails.txt                                            *
+    ******************************************************************************************************'''
+    # Format:
     # from-"from_address":"row_id"
     # to-"to_address":"row_id"
     emails_file = open("emails.txt", "w+")
@@ -47,11 +55,50 @@ def main():
         emails_file.write("from-%s:%s\n" % (from_address, row_id))
         emails_file.write("to-%s:%s\n" % (to_address, row_id))
     emails_file.close()
-    
+
+    '''******************************************************************************************************
+    *                                        Sort the created files                                         *
+    ******************************************************************************************************'''
+
     os.system('sort -o dates.txt dates.txt | uniq')
     os.system('sort -o emails.txt emails.txt | uniq')
     os.system('sort -o recs.txt recs.txt | uniq')
     os.system('sort -o terms.txt terms.txt | uniq')
+
+    '''******************************************************************************************************
+    *                                  Reformat (again smh) for db_load                                     *
+    ******************************************************************************************************'''
+
+    terms = open('terms.txt', "r")
+    terms_db_load = open('terms_db_load.txt', "w+")
+    dates = open('dates.txt', "r")
+    dates_db_load = open('dates_db_load.txt', "w+")
+    emails = open('emails.txt', "r")
+    emails_db_load = open('emails_db_load.txt', "w+")
+
+    for line in terms:
+        line.replace("\\", "")
+        temp = line.split(":")
+        print(temp)
+        terms_db_load.write(temp[1] + temp[0] + "\n")
+    terms.close()
+    terms_db_load.close()
+
+    for line in dates:
+        line.replace("\\", "")
+        temp = line.split(":")
+        print(temp)
+        dates_db_load.write(temp[1] + temp[0] + "\n")
+    dates.close()
+    dates_db_load.close()
+
+    for line in emails:
+        line.replace("\\", "")
+        temp = line.split(":")
+        print(temp)
+        emails_db_load.write(temp[1] + temp[0] + "\n")
+    emails.close()
+    emails_db_load.close()
 
 
 if __name__ == "__main__":

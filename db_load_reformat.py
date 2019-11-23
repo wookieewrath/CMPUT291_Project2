@@ -12,18 +12,23 @@ def reformat():
         temp = line.split(":")
         print(temp)
         terms_out.write(temp[1]+temp[0]+"\n")
+    terms.close()
+    terms_out.close()
 
     for line in dates:
         line.replace("\\", "")
         temp = line.split(":")
         print(temp)
         dates_out.write(temp[1]+temp[0]+"\n")
+    dates.close()
+    dates_out.close()
 
     for line in emails:
         line.replace("\\", "")
         temp = line.split(":")
         print(temp)
         emails_out.write(temp[1]+temp[0]+"\n")
-
+    emails.close()
+    emails_out.close()
 
 reformat()

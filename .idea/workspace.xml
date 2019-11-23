@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="79ba8515-421e-42f2-9fc7-1315888b1f8f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/dates.txt" beforeDir="false" afterPath="$PROJECT_DIR$/dates.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_load_reformat.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_load_reformat.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reformat_for_davood.py" beforeDir="false" afterPath="$PROJECT_DIR$/reformat_for_davood.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
