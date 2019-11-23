@@ -164,6 +164,7 @@ def main():
     recs.close()
     recs_db_load.close()
     print("Reformatted ✓")
+    print("\n")
 
     '''******************************************************************************************************
     *                                          Create index files                                           *
