@@ -1,34 +1,16 @@
 def reformat():
 
-    terms = open('terms.txt', "r")
-    terms_out = open('terms_out.txt', "w+")
-    dates = open('dates.txt', "r")
-    dates_out = open('dates_out.txt', "w+")
-    emails = open('emails.txt', "r")
-    emails_out = open('emails_out.txt', "w+")
+    recs = open('recs.txt', "r")
+    recs_db_load = open('recs_db_load.txt', "w+")
 
-    for line in terms:
+    for line in recs:
         line.replace("\\", "")
-        temp = line.split(":")
+        temp = line.split(":<mail>")
         print(temp)
-        terms_out.write(temp[1]+temp[0]+"\n")
-    terms.close()
-    terms_out.close()
+        recs_db_load.write(temp[0] + "\n" + "<mail>" + temp[1])
 
-    for line in dates:
-        line.replace("\\", "")
-        temp = line.split(":")
-        print(temp)
-        dates_out.write(temp[1]+temp[0]+"\n")
-    dates.close()
-    dates_out.close()
+    recs.close()
+    recs_db_load.close()
 
-    for line in emails:
-        line.replace("\\", "")
-        temp = line.split(":")
-        print(temp)
-        emails_out.write(temp[1]+temp[0]+"\n")
-    emails.close()
-    emails_out.close()
 
 reformat()

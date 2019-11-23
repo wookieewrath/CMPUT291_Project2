@@ -83,15 +83,15 @@ def main():
 
     recs_file.close()
     xml_file.close()
-    
+
     '''******************************************************************************************************
     *                                        Sort the created files                                         *
     ******************************************************************************************************'''
 
-    os.system('sort -o dates.txt dates.txt | uniq')
-    os.system('sort -o emails.txt emails.txt | uniq')
-    os.system('sort -o recs.txt recs.txt | uniq')
-    os.system('sort -o terms.txt terms.txt | uniq')
+    os.system('sort -n -o dates.txt dates.txt | uniq')
+    os.system('sort -n -o emails.txt emails.txt | uniq')
+    os.system('sort -n -o recs.txt recs.txt | uniq')
+    os.system('sort -n -o terms.txt terms.txt | uniq')
 
     '''******************************************************************************************************
     *                                  Reformat (again smh) for db_load                                     *
@@ -103,6 +103,8 @@ def main():
     dates_db_load = open('dates_db_load.txt', "w+")
     emails = open('emails.txt', "r")
     emails_db_load = open('emails_db_load.txt', "w+")
+    recs = open('recs.txt', "r")
+    recs_db_load = open('recs_db_load.txt', "w+")
 
     for line in terms:
         line.replace("\\", "")
@@ -124,6 +126,15 @@ def main():
         emails_db_load.write(temp[1] + temp[0] + "\n")
     emails.close()
     emails_db_load.close()
+
+    for line in recs:
+        line.replace("\\", "")
+        temp = line.split(":<mail>")
+        print(temp)
+        recs_db_load.write(temp[0] + "\n" + "<mail>" + temp[1])
+
+    recs.close()
+    recs_db_load.close()
 
 
 if __name__ == "__main__":
