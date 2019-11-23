@@ -94,26 +94,29 @@ def main():
     recs_file.close()
     xml_file.close()
     print("Created ✓")
+    print("\n")
 
     '''******************************************************************************************************
     *                                        Sort the created files                                         *
     ******************************************************************************************************'''
 
-    print("\nSorting terms.txt files:")
+    print("Sorting terms.txt files:")
     os.system('sort -n -o terms.txt terms.txt | uniq')
     print("Sorted ✓")
 
-    print("\nSorting dates.txt files:")
+    print("Sorting dates.txt files:")
     os.system('sort -n -o dates.txt dates.txt | uniq')
     print("Sorted ✓")
 
-    print("\nSorting emails.txt files:")
+    print("Sorting emails.txt files:")
     os.system('sort -n -o emails.txt emails.txt | uniq')
     print("Sorted ✓")
 
-    print("\nSorting recs.txt files:")
+    print("Sorting recs.txt files:")
     os.system('sort -n -o recs.txt recs.txt | uniq')
     print("Sorted ✓")
+    print("\n")
+
 
     '''******************************************************************************************************
     *                                  Reformat (again smh) for db_load                                     *
@@ -162,7 +165,6 @@ def main():
     recs.close()
     recs_db_load.close()
     print("Reformatted ✓")
-    print("\n")
 
     '''******************************************************************************************************
     *                                          Create index files                                           *
@@ -171,19 +173,19 @@ def main():
     os.system('echo "Creating te.idx"')
     os.system('db_load -f terms_db_load.txt -T -t btree te.idx')
     os.system('db_dump -p -f terms_index te.idx')
-    os.system('echo "Completed"')
+    os.system('echo "Completed ✓"')
 
     os.system('echo "Creating em.idx"')
     os.system('db_load -f emails_db_load.txt -T -t btree em.idx')
-    os.system('echo "Completed"')
+    os.system('echo "Completed ✓"')
 
     os.system('echo "Creating da.idx"')
     os.system('db_load -f dates_db_load.txt -T -t btree da.idx')
-    os.system('echo "Completed"')
+    os.system('echo "Completed ✓"')
 
     os.system('echo "Creating re.idx"')
     os.system('db_load -f recs_db_load.txt -T -t hash re.idx')
-    os.system('echo "Completed"')
+    os.system('echo "Completed ✓"')
 
     test.print_happiness()
 
