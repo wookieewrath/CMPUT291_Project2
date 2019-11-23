@@ -1,7 +1,6 @@
 import xml.etree.ElementTree as ET
 import re
 import os
-import test
 
 
 def main():
@@ -187,7 +186,26 @@ def main():
     os.system('db_load -f recs_db_load.txt -T -t hash re.idx')
     os.system('echo "Completed ✓"')
 
-    test.print_happiness()
+    turtle = (r'''
+                Yee we done bois!!!
+                                         ___-------___
+                                     _-~~             ~~-_
+                                 _-~                    /~-_
+              /^\__/^\          /~  \                   /    \
+             /|  O|| O|       /     \_______________/          \
+            | |___||__|      /       /                \          \
+            |          \    /      /                    \          \
+            |   (_______) /______/                        \_________ \
+            |         / /         \                      /             \
+             \         \^\\         \                  /                 \     /
+              \         ||           \______________/      _-_          //\__//
+               \       ||------_-~~-_ ------------- \ --/~   ~\        || __/)
+                ~-----||====/~      |==================|       |/~~~~~
+                 (_(__/  ./       /                   \_\      \.
+                           (_(___/                       \_____)_)
+
+                           ''')
+    print(turtle)
 
 
 if __name__ == "__main__":
