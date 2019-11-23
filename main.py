@@ -21,14 +21,14 @@ def main():
     terms = open("terms.txt", "w+")
     for x in range(length):
         if root[x][4].text is not None:
-            string = re.split(r"[^0-9a-zA-Z\_\-]", root[x][4].text)
+            string = re.split(r"[^0-9a-zA-Z_\-]", root[x][4].text)
             for y in string:
-                if (len(''.join(filter(alphabet.__contains__, y)).lower()) > 2):
+                if len(''.join(filter(alphabet.__contains__, y)).lower()) > 2:
                     terms.write("s-" + ''.join(filter(alphabet.__contains__, y)).lower() + ":" + root[x][0].text + "\n")
         if root[x][7].text is not None:
-            string = re.split(r"[^0-9a-zA-Z\_\-]", root[x][7].text)
+            string = re.split(r"[^0-9a-zA-Z_\-]", root[x][7].text)
             for y in string:
-                if (len(''.join(filter(alphabet.__contains__, y)).lower()) > 2):
+                if len(''.join(filter(alphabet.__contains__, y)).lower()) > 2:
                     terms.write("b-" + ''.join(filter(alphabet.__contains__, y)).lower() + ":" + root[x][0].text + "\n")
     terms.close()
 
