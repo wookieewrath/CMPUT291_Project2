@@ -58,32 +58,32 @@ def main():
         emails_file.write("from-%s:%s\n" % (from_address, row_id))
         emails_file.write("to-%s:%s\n" % (to_address, row_id))
     emails_file.close()
-    
-        '''******************************************************************************************************
+
+    '''******************************************************************************************************
     *                                          Create recs.txt                                            *
     ******************************************************************************************************'''
     recs_file = open("recs.txt", "w+")
     xml_file = open(file, "r")
-    
+
     i = 0
 
     for line in xml_file:
-        i+=1
-        if i>2 and line[0:9]!='</emails>':
+        i += 1
+        if i > 2 and line[0:9] != '</emails>':
             if line[0:6] == '<mail>':
                 j = 11
                 row = line[j]
-                while j<19:
+                while j < 19:
                     j += 1
                     if line[j].isdigit():
                         row += line[j]
-                recs_file.write("%s:%s"%(row,line))
+                recs_file.write("%s:%s" % (row, line))
             else:
-                recs_file.write("%s"%(line))
-
+                recs_file.write("%s" % (line))
 
     recs_file.close()
     xml_file.close()
+    
     '''******************************************************************************************************
     *                                        Sort the created files                                         *
     ******************************************************************************************************'''
