@@ -24,6 +24,7 @@ def main():
             for y in string:
                 if (len(''.join(filter(alphabet.__contains__, y)).lower()) > 2):
                     terms.write("b-" + ''.join(filter(alphabet.__contains__, y)).lower() + ":" + root[x][0].text + "\n")
+    terms.close()
 
     # Creates the "dates.txt" file from the XML input using the following format:
     # "date":"row_id"
