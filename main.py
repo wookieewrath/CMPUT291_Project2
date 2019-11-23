@@ -82,7 +82,6 @@ def main():
     for line in terms:
         line.replace("\\", "")
         temp = line.split(":")
-        print(temp)
         terms_db_load.write(temp[1] + temp[0] + "\n")
     terms.close()
     terms_db_load.close()
@@ -90,7 +89,6 @@ def main():
     for line in dates:
         line.replace("\\", "")
         temp = line.split(":")
-        print(temp)
         dates_db_load.write(temp[1] + temp[0] + "\n")
     dates.close()
     dates_db_load.close()
@@ -98,7 +96,6 @@ def main():
     for line in emails:
         line.replace("\\", "")
         temp = line.split(":")
-        print(temp)
         emails_db_load.write(temp[1] + temp[0] + "\n")
     emails.close()
     emails_db_load.close()
