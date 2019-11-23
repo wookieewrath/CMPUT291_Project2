@@ -1,6 +1,7 @@
 import xml.etree.ElementTree as ET
 import re
 import os
+import test
 
 
 def main():
@@ -9,6 +10,7 @@ def main():
     file = input("Please print the name of the XML file: ")
     tree = ET.parse(file)
     root = tree.getroot()
+    print("\n")
 
     '''******************************************************************************************************
     *                                           Create terms.txt                                            *
@@ -31,6 +33,7 @@ def main():
                 if len(''.join(filter(alphabet.__contains__, y)).lower()) > 2:
                     terms.write("b-" + ''.join(filter(alphabet.__contains__, y)).lower() + ":" + root[x][0].text + "\n")
     terms.close()
+    print("Created terms.txt")
 
     '''******************************************************************************************************
     *                                           Create dates.txt                                            *
@@ -43,6 +46,7 @@ def main():
         body = x.find('body').text
         date_file.write("%s:%s\n" % (date, row_id))
     date_file.close()
+    print("Created dates.txt")
 
     '''******************************************************************************************************
     *                                          Create emails.txt                                            *
@@ -58,6 +62,7 @@ def main():
         emails_file.write("from-%s:%s\n" % (from_address, row_id))
         emails_file.write("to-%s:%s\n" % (to_address, row_id))
     emails_file.close()
+    print("Created emails.txt")
 
     '''******************************************************************************************************
     *                                          Create recs.txt                                            *
@@ -83,29 +88,26 @@ def main():
 
     recs_file.close()
     xml_file.close()
+    print("Created recs.txt")
 
     '''******************************************************************************************************
     *                                        Sort the created files                                         *
     ******************************************************************************************************'''
 
+    print("\n Sorting text files")
     os.system('sort -n -o dates.txt dates.txt | uniq')
     os.system('sort -n -o emails.txt emails.txt | uniq')
     os.system('sort -n -o recs.txt recs.txt | uniq')
     os.system('sort -n -o terms.txt terms.txt | uniq')
+    print("Files have been sorted\n")
 
     '''******************************************************************************************************
     *                                  Reformat (again smh) for db_load                                     *
     ******************************************************************************************************'''
 
+    print("Reformatting terms.txt for db_load")
     terms = open('terms.txt', "r")
     terms_db_load = open('terms_db_load.txt', "w+")
-    dates = open('dates.txt', "r")
-    dates_db_load = open('dates_db_load.txt', "w+")
-    emails = open('emails.txt', "r")
-    emails_db_load = open('emails_db_load.txt', "w+")
-    recs = open('recs.txt', "r")
-    recs_db_load = open('recs_db_load.txt', "w+")
-
     for line in terms:
         line.replace("\\", "")
         temp = line.split(":")
@@ -113,6 +115,9 @@ def main():
     terms.close()
     terms_db_load.close()
 
+    print("Reformatting dates.txt for db_load")
+    dates = open('dates.txt', "r")
+    dates_db_load = open('dates_db_load.txt', "w+")
     for line in dates:
         line.replace("\\", "")
         temp = line.split(":")
@@ -120,6 +125,9 @@ def main():
     dates.close()
     dates_db_load.close()
 
+    print("Reformatting emails.txt for db_load")
+    emails = open('emails.txt', "r")
+    emails_db_load = open('emails_db_load.txt', "w+")
     for line in emails:
         line.replace("\\", "")
         temp = line.split(":")
@@ -127,14 +135,39 @@ def main():
     emails.close()
     emails_db_load.close()
 
+    print("Reformatting recs.txt for db_load")
+    recs = open('recs.txt', "r")
+    recs_db_load = open('recs_db_load.txt', "w+")
     for line in recs:
         line.replace("\\", "")
         temp = line.split(":<mail>")
         print(temp)
         recs_db_load.write(temp[0] + "\n" + "<mail>" + temp[1])
-
     recs.close()
     recs_db_load.close()
+
+    '''******************************************************************************************************
+    *                                          Create index files                                           *
+    ******************************************************************************************************'''
+
+    os.system('echo "Creating te.idx"')
+    os.system('db_load -f terms_db_load.txt -T -t btree te.idx')
+    os.system('db_dump -p -f terms_index te.idx')
+    os.system('echo "Completed"')
+
+    os.system('echo "Creating em.idx"')
+    os.system('db_load -f emails_db_load.txt -T -t btree em.idx')
+    os.system('echo "Completed"')
+
+    os.system('echo "Creating da.idx"')
+    os.system('db_load -f dates_db_load.txt -T -t btree da.idx')
+    os.system('echo "Completed"')
+
+    os.system('echo "Creating re.idx"')
+    os.system('db_load -f recs_db_load.txt -T -t hash re.idx')
+    os.system('echo "Completed"')
+
+    test.print_happiness()
 
 
 if __name__ == "__main__":
