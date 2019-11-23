@@ -141,7 +141,6 @@ def main():
     for line in recs:
         line.replace("\\", "")
         temp = line.split(":<mail>")
-        print(temp)
         recs_db_load.write(temp[0] + "\n" + "<mail>" + temp[1])
     recs.close()
     recs_db_load.close()
