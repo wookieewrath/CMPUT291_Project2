@@ -17,7 +17,7 @@ def main():
     # Format:
     # s-"subject_term":"row_id"
     # b-"body_term":"row_id"
-    print("Created terms.txt")
+    print("Creating terms.txt")
     length = len(tree.findall("mail"))
     alphabet = set('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-_0123456789')
     terms = open("terms.txt", "w+")
@@ -40,7 +40,7 @@ def main():
     *                                           Create dates.txt                                            *
     ******************************************************************************************************'''
     # Format: "date":"row_id"
-    print("Created dates.txt")
+    print("Creating dates.txt")
     date_file = open("dates.txt", "w+")
     for x in root.findall('mail'):
         date = x.find('date').text
@@ -56,7 +56,7 @@ def main():
     # Format:
     # from-"from_address":"row_id"
     # to-"to_address":"row_id"
-    print("Created emails.txt")
+    print("Creating emails.txt")
     emails_file = open("emails.txt", "w+")
     for x in root.findall('mail'):
         from_address = x.find('from').text
@@ -71,7 +71,7 @@ def main():
     *                                          Create recs.txt                                            *
     ******************************************************************************************************'''
 
-    print("Created recs.txt")
+    print("Creating recs.txt")
     recs_file = open("recs.txt", "w+")
     xml_file = open(file, "r")
 
