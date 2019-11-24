@@ -96,7 +96,7 @@ def main():
     recs_file.close()
     xml_file.close()
     print("Created ✓")
-    print("\n")
+    print("")
 
     '''******************************************************************************************************
     *                                        Sort the created files                                         *
@@ -117,7 +117,7 @@ def main():
     print("Sorting recs.txt files:")
     os.system('sort -o recs.txt recs.txt -u')
     print("Sorted ✓")
-    print("\n")
+    print("")
 
     '''******************************************************************************************************
     *                                  Reformat (again smh) for db_load                                     *
@@ -166,7 +166,7 @@ def main():
     recs.close()
     recs_db_load.close()
     print("Reformatted ✓")
-    print("\n")
+    print("")
 
     '''******************************************************************************************************
     *                                          Create index files                                           *
