@@ -29,16 +29,29 @@ while True:
 string = "".join(decomposed_string)
 
 #string.split() will remove all white spaces and create an array of search fields, symbols, and search values.
+#Create a copy of the search_terms array called subject_body_searches, which we will shortlist for words without an keyword/operator prefix.
 search_terms = string.split()
+subject_body_searches= []
+for i in range(len(search_terms)):
+        subject_body_searches.append(search_terms[i])
 
-#Search this array for symbols.
-#If the search_term before the symbol is a keyword, create a dictionary entry.
+#Traverse the search_terms array looking for a symbol.
+#If the word before the symbol is not an existing key in the query, create a new dictionary entry.
+#Otherwise, append the new value to the existing keyword in the query.
+#Remove the keyword, the operator, and the value from the subject_body_searches array which will have only appropriate values after the for-loop.
 for i in range(len(search_terms)):
         if search_terms[i] in symbols:
-                if search_terms[i-1] in keywords:
-                        query[search_terms[i-1]] = search_terms[i] + search_terms[i+1]
+                if search_terms[i-1] in keywords and search_terms[i-1] not in query:
+                        query[search_terms[i-1]] = ["".join(search_terms[i] + search_terms[i+1])]
+                        subject_body_searches.remove(search_terms[i-1])
+                        subject_body_searches.remove(search_terms[i])
+                        subject_body_searches.remove(search_terms[i+1])
                         
+                elif search_terms[i-1] in keywords and search_terms[i-1] in query:
+                        query[search_terms[i-1]].append("".join(search_terms[i] + search_terms[i+1]))
+                        subject_body_searches.remove(str(search_terms[i-1]))
+                        subject_body_searches.remove(str(search_terms[i]))
+                        subject_body_searches.remove(str(search_terms[i+1]))                        
+
+print(subject_body_searches)
 print(query)
-
-
-
