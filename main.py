@@ -173,22 +173,22 @@ def main():
     ******************************************************************************************************'''
 
     os.system('echo "Creating te.idx"')
-    os.system('db_load -f terms_db_load.txt -T -t btree te.idx')
+    os.system('db_load -f terms_db_load.txt -c duplicates=1 -T -t btree te.idx')
     os.system('db_dump -p -f terms_index te.idx')
     os.system('echo "Completed ✓"')
 
     os.system('echo "Creating em.idx"')
-    os.system('db_load -f emails_db_load.txt -T -t btree em.idx')
+    os.system('db_load -f emails_db_load.txt -c duplicates=1 -T -t btree em.idx')
     os.system('db_dump -p -f emails_index em.idx')
     os.system('echo "Completed ✓"')
 
     os.system('echo "Creating da.idx"')
-    os.system('db_load -f dates_db_load.txt -T -t btree da.idx')
+    os.system('db_load -f dates_db_load.txt -c duplicates=1 -T -t btree da.idx')
     os.system('db_dump -p -f dates_index da.idx')
     os.system('echo "Completed ✓"')
 
     os.system('echo "Creating re.idx"')
-    os.system('db_load -f recs_db_load.txt -T -t hash re.idx')
+    os.system('db_load -f recs_db_load.txt -c duplicates=1 -T -t hash re.idx')
     os.system('db_dump -p -f recs_index re.idx')
     os.system('echo "Completed ✓"')
 
