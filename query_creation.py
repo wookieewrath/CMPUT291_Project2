@@ -53,6 +53,11 @@ for i in range(len(search_terms)):
                         subject_body_searches.remove(str(search_terms[i]))
                         subject_body_searches.remove(str(search_terms[i+1]))     
                         
-# WHERE DO WE WANT TO PUT THE WORDS CONFIDENTIAL% AND STOCK. THIS IS A TEMPORARY LOCATION FOR THEM.
 print("SEARCH TERMS IN EITHER THE SUBJECT OR BODY:", subject_body_searches) 
 print(query)
+print(query.keys())
+
+#If subject is an existing keyword add all the elements of subject_body_searches to their list value
+#If not, create the keyword, and add the value
+#If body is not an existing keyword add all the elements of subject_body_searches to their list value
+#If not, create the keyword, and add the value
