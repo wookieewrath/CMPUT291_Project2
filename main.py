@@ -127,7 +127,7 @@ def main():
     for line in terms:
         line.replace("\\", "")
         temp = line.split(":")
-        terms_db_load.write(temp[1] + temp[0] + "\n")
+        terms_db_load.write(temp[0] + "\n" +  temp[1])
     terms.close()
     terms_db_load.close()
     print("Reformatted ✓")
@@ -138,7 +138,7 @@ def main():
     for line in dates:
         line.replace("\\", "")
         temp = line.split(":")
-        dates_db_load.write(temp[1] + temp[0] + "\n")
+        dates_db_load.write(temp[0] + "\n" +  temp[1])
     dates.close()
     dates_db_load.close()
     print("Reformatted ✓")
@@ -149,7 +149,7 @@ def main():
     for line in emails:
         line.replace("\\", "")
         temp = line.split(":")
-        emails_db_load.write(temp[1] + temp[0] + "\n")
+        emails_db_load.write(temp[0] + "\n" +  temp[1])
     emails.close()
     emails_db_load.close()
     print("Reformatted ✓")
@@ -189,6 +189,11 @@ def main():
 
     turtle = (r'''
                 Yee we done bois!!!
+                
+                "Brevity is the soul of wit"
+                    -- William Shakespeare, Hamlet
+                        -- K. N. King, C Programming, a Modern Approach
+                        
                                          ___-------___
                                      _-~~             ~~-_
                                  _-~                    /~-_

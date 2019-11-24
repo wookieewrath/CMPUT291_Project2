@@ -2,8 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="79ba8515-421e-42f2-9fc7-1315888b1f8f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dates.txt" beforeDir="false" afterPath="$PROJECT_DIR$/dates.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dates_db_load.txt" beforeDir="false" afterPath="$PROJECT_DIR$/dates_db_load.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emails.txt" beforeDir="false" afterPath="$PROJECT_DIR$/emails.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emails_db_load.txt" beforeDir="false" afterPath="$PROJECT_DIR$/emails_db_load.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/recs.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recs_db_load.txt" beforeDir="false" afterPath="$PROJECT_DIR$/recs_db_load.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/terms.txt" beforeDir="false" afterPath="$PROJECT_DIR$/terms.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/terms_db_load.txt" beforeDir="false" afterPath="$PROJECT_DIR$/terms_db_load.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,7 +52,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.test">
+  <component name="RunManager" selected="Python.main">
     <configuration name="Hello" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="CMPUT291_Project2" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -152,9 +160,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.test" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.db_load_reformat" />
+        <item itemvalue="Python.test" />
         <item itemvalue="Python.reformat_for_davood" />
         <item itemvalue="Python.Hello" />
       </list>
