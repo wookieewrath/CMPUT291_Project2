@@ -1,5 +1,5 @@
 #The following function will take a string to search from the user and map all search words to their search values.
-#Each entry in the diction will have the following format:
+#Each entry in the dictionary will have the following format:
 #'SEARCH_KEY' : 'OPERATOR''SEARCH_VALUE'
 #Where the operator before the search value can be: ":", "<", or ">" since we need these fields to appropriately query the database.
 search_string = input("Enter a string to search by: ")
