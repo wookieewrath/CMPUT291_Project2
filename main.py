@@ -59,9 +59,13 @@ def main():
     for x in root.findall('mail'):
         from_address = x.find('from').text
         to_address = x.find('to').text
+        cc_address = x.find('cc').text
+        bcc_address = x.find('bcc').text
         row_id = x.find('row').text
         emails_file.write("from-%s:%s\n" % (from_address, row_id))
         emails_file.write("to-%s:%s\n" % (to_address, row_id))
+        emails_file.write("to-%s:%s\n" % (cc_address, row_id))
+        emails_file.write("to-%s:%s\n" % (bcc_address, row_id))
     emails_file.close()
     print("Created ✓")
 
