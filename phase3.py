@@ -27,6 +27,7 @@ def main():
         print(iter)
         iter = terms_curs.next()
 
+    result = dates_curs.set(b'2001/05/14')
     while True:
         result = dates_curs.next_dup()
         if result is not None:
