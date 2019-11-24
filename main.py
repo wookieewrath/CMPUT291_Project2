@@ -192,7 +192,7 @@ def main():
                 
                 "Brevity is the soul of wit"
                     -- William Shakespeare, Hamlet
-                        -- K. N. King, C Programming, a Modern Approach
+                        -- K. N. King, C Programming: a Modern Approach
                         
                                          ___-------___
                                      _-~~             ~~-_
