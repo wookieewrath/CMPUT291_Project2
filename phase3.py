@@ -1,32 +1,35 @@
 from bsddb3 import db
 
-terms_file = "te.idx"
-dates_file = "da.idx"
-emails_file = "em.idx"
-recs_file = "re.idx"
+def main():
 
-terms_database = db.DB()
-dates_database = db.DB()
-emails_database = db.DB()
-recs_database = db.DB()
+    terms_file = "te.idx"
+    dates_file = "da.idx"
+    emails_file = "em.idx"
+    recs_file = "re.idx"
 
-terms_database.open(terms_file)
-dates_database.open(dates_file)
-emails_database.open(emails_file)
-recs_database.open(recs_file)
+    terms_database = db.DB()
+    dates_database = db.DB()
+    emails_database = db.DB()
+    recs_database = db.DB()
 
-terms_curs = terms_database.cursor()
-dates_curs = dates_database.cursor()
-emails_curs = emails_database.cursor()
-recs_curs = recs_database.cursor()
+    terms_database.open(terms_file)
+    dates_database.open(dates_file)
+    emails_database.open(emails_file)
+    recs_database.open(recs_file)
 
-iter = terms_curs.first()
-while iter:
-    print(iter)
-    iter=terms_curs.next()
+    terms_curs = terms_database.cursor()
+    dates_curs = dates_database.cursor()
+    emails_curs = emails_database.cursor()
+    recs_curs = recs_database.cursor()
 
-result = terms_database.get(b'994')
-print(result)
+    iter = terms_curs.first()
+    while iter:
+        print(iter)
+        iter = terms_curs.next()
 
-result = terms_curs.set(b'b-you')
-print(result)
+    while True:
+        result = dates_curs.next_dup()
+        if result is not None:
+            print(result)
+        else:
+            break
