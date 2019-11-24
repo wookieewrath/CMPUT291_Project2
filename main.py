@@ -97,21 +97,21 @@ def main():
     '''******************************************************************************************************
     *                                        Sort the created files                                         *
     ******************************************************************************************************'''
-
+    
     print("Sorting terms.txt files:")
-    os.system('sort -n -o terms.txt terms.txt | uniq')
+    os.system('sort -o terms.txt terms.txt -u')
     print("Sorted ✓")
 
     print("Sorting dates.txt files:")
-    os.system('sort -n -o dates.txt dates.txt | uniq')
+    os.system('sort -o dates.txt dates.txt -u')
     print("Sorted ✓")
 
     print("Sorting emails.txt files:")
-    os.system('sort -n -o emails.txt emails.txt | uniq')
+    os.system('sort -o emails.txt emails.txt -u')
     print("Sorted ✓")
 
     print("Sorting recs.txt files:")
-    os.system('sort -n -o recs.txt recs.txt | uniq')
+    os.system('sort -o recs.txt recs.txt -u')
     print("Sorted ✓")
     print("\n")
 
