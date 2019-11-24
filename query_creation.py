@@ -52,12 +52,35 @@ for i in range(len(search_terms)):
                         subject_body_searches.remove(str(search_terms[i-1]))
                         subject_body_searches.remove(str(search_terms[i]))
                         subject_body_searches.remove(str(search_terms[i+1]))     
-                        
-print("SEARCH TERMS IN EITHER THE SUBJECT OR BODY:", subject_body_searches) 
-print(query)
-print(query.keys())
 
 #If subject is an existing keyword add all the elements of subject_body_searches to their list value
 #If not, create the keyword, and add the value
 #If body is not an existing keyword add all the elements of subject_body_searches to their list value
 #If not, create the keyword, and add the value
+print("SEARCH TERMS IN EITHER THE SUBJECT OR BODY:", subject_body_searches) 
+print("QUERY DICTIONARY", query)
+
+email_searches = []
+terms_searches = []
+dates_searches = []
+
+for search_term in query:
+        if search_term == "to" or search_term == "from" or search_term == "cc" or search_term == "bcc":
+                for value in range(len(query[search_term])):
+                        search = search_term + '-' + query[search_term][value][1:]
+                        email_searches.append(search)
+        
+        if search_term == "subj" or search_term == "subject" or search_term == "body":
+                for value in range(len(query[search_term])):
+                        search = search_term[0] + '-' + query[search_term][value][1:]
+                        terms_searches.append(search)
+        
+        if search_term == "date":
+                for value in range(len(query[search_term])):
+                        search = query[search_term][value]
+                        dates_searches.append(search)
+
+
+print("EMAIL SEARCHES:", email_searches)
+print("TERMS SEARCHES:", terms_searches)
+print("DATES SEARCHES:", dates_searches)
