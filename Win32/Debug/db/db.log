@@ -1,0 +1,501 @@
+﻿  xa_map.c
+  xa.c
+  zerofill.c
+  util_ver_check.c
+  util_sig.c
+  util_log.c
+  util_env.c
+  util_cache.c
+  util_arg.c
+  os_method.c
+  txn_util.c
+  txn_stat.c
+  txn_region.c
+  txn_recover.c
+  txn_rec.c
+  txn_method.c
+  txn_failchk.c
+  txn_chkpt.c
+  txn_auto.c
+  txn.c
+  Generating Code...
+  Compiling...
+  strsep.c
+  sha1.c
+  sequence.c
+  seq_stat.c
+  rijndael-api-fst.c
+  rijndael-alg-fst.c
+  repmgr_windows.c
+  repmgr_util.c
+  repmgr_stat.c
+  repmgr_sel.c
+cl : command line warning D9035: option 'Gm' has been deprecated and will be removed in a future release
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\src\repmgr\repmgr_sel.c(1172,10): warning C4102: 'finish_io': unreferenced label
+  repmgr_rec.c
+  repmgr_queue.c
+  repmgr_net.c
+  repmgr_msg.c
+  repmgr_method.c
+  repmgr_elect.c
+  repmgr_automsg.c
+  repmgr_auto.c
+  rep_verify.c
+  rep_util.c
+  Generating Code...
+  Compiling...
+  rep_stat.c
+  rep_region.c
+  rep_record.c
+  rep_method.c
+  rep_log.c
+  rep_lease.c
+  rep_elect.c
+  rep_backup.c
+  rep_automsg.c
+  qam_verify.c
+  qam_upgrade.c
+  qam_stat.c
+  qam_rec.c
+  qam_open.c
+  qam_method.c
+  qam_files.c
+  qam_conv.c
+  qam_auto.c
+  qam.c
+  os_yield.c
+  Generating Code...
+  Compiling...
+  os_unlink.c
+  os_uid.c
+  os_truncate.c
+  os_tmpdir.c
+  os_stat.c
+  os_stack.c
+  os_seek.c
+  os_rw.c
+  os_rpath.c
+  os_root.c
+  os_rename.c
+  os_pid.c
+  os_path.c
+  os_rmdir.c
+  os_open.c
+  os_mkdir.c
+  os_map.c
+  os_handle.c
+  os_getenv.c
+  os_fsync.c
+  Generating Code...
+  Compiling...
+  os_flock.c
+  os_fid.c
+  os_errno.c
+  os_dir.c
+  os_ctime.c
+  os_cpu.c
+  os_config.c
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\src\repmgr\repmgr_sel.c(2804,6): warning C4101: 'error_code': unreferenced local variable
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\src\os_windows\os_config.c(32,1): warning C4996: 'GetVersion': was declared deprecated
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\sysinfoapi.h(144): message : see declaration of 'GetVersion'
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\src\os_windows\os_config.c(85,1): warning C4996: 'GetVersionExW': was declared deprecated
+  os_clock.c
+  os_alloc.c
+  os_abs.c
+  os_addrinfo.c
+  os_abort.c
+  openflags.c
+  mut_win32.c
+  mut_stat.c
+  mut_region.c
+  mut_method.c
+  mut_failchk.c
+  mut_alloc.c
+  mt19937db.c
+  Generating Code...
+  Compiling...
+  mp_trickle.c
+  mp_sync.c
+  mp_stat.c
+  mp_resize.c
+  mp_register.c
+  mp_region.c
+  mp_mvcc.c
+  mp_method.c
+  mp_fset.c
+  mp_fput.c
+  mp_fopen.c
+  mp_fmethod.c
+  mp_fget.c
+  mp_bh.c
+  mp_backup.c
+  mp_alloc.c
+  mkpath.c
+  log_verify_int.c
+  log_verify_auto.c
+  log_verify_util.c
+  Generating Code...
+  Compiling...
+  log_verify.c
+  log_stat.c
+  log_put.c
+  log_print.c
+  log_method.c
+  log_get.c
+  log_debug.c
+  log_compare.c
+  log_archive.c
+  log.c
+  lock_util.c
+  lock_timer.c
+  lock_stat.c
+  lock_region.c
+  lock_method.c
+  lock_list.c
+  lock_id.c
+  lock_failchk.c
+  lock_deadlock.c
+  lock.c
+  Generating Code...
+  Compiling...
+  isalpha.c
+  hsearch.c
+  hmac.c
+  heap_verify.c
+  heap_upgrade.c
+  heap_stat.c
+  heap_reclaim.c
+  heap_rec.c
+  heap_open.c
+  heap_method.c
+  heap_conv.c
+  heap_backup.c
+  heap_auto.c
+  heap.c
+  hash_verify.c
+  hash_upgrade.c
+  hash_stat.c
+  hash_reclaim.c
+  hash_rec.c
+  hash_page.c
+  Generating Code...
+  Compiling...
+  hash_open.c
+  hash_method.c
+  hash_meta.c
+  hash_func.c
+  hash_dup.c
+  hash_conv.c
+  hash_compact.c
+  hash_auto.c
+  hash.c
+  fop_util.c
+  fop_rec.c
+  fop_basic.c
+  fileops_auto.c
+  env_stat.c
+  env_slice.c
+  env_sig.c
+  env_register.c
+  env_region.c
+  env_recover.c
+  env_open.c
+  Generating Code...
+  Compiling...
+  env_name.c
+  env_method.c
+  env_globals.c
+  env_file.c
+  env_failchk.c
+  env_config.c
+  env_backup.c
+  env_alloc.c
+  dbt.c
+  dbreg_util.c
+  dbreg_stat.c
+  dbreg_rec.c
+  dbreg_auto.c
+  dbreg.c
+  dbm.c
+  partition.c
+  db_vrfyutil.c
+  db_vrfy.c
+  db_upg_opd.c
+  db_upg.c
+  Generating Code...
+  Compiling...
+  db_truncate.c
+  db_stati.c
+  db_sort_multiple.c
+  db_slice.c
+  db_shash.c
+  db_setlsn.c
+  db_setid.c
+  db_ret.c
+  db_rename.c
+  db_remove.c
+  db_reclaim.c
+  db_rec.c
+  db_pr.c
+  db_ovfl_vrfy.c
+  db_overflow.c
+  db_open.c
+  db_method.c
+  db_meta.c
+  db_log2.c
+  db_join.c
+  Generating Code...
+  Compiling...
+  db_iface.c
+  db_compint.c
+  db_idspace.c
+  db_getlong.c
+  db_err.c
+  db_dup.c
+  db_dispatch.c
+  db_copy.c
+  db_conv.c
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\sysinfoapi.h(396): message : see declaration of 'GetVersionExW'
+  db_compact.c
+  db_cds.c
+  db_cam.c
+  db_byteorder.c
+  db_backup.c
+  clock.c
+  db_auto.c
+  db_am.c
+  db.c
+  crypto.c
+  crdel_rec.c
+  Generating Code...
+  Compiling...
+  crdel_auto.c
+  btree_auto.c
+  bt_verify.c
+  bt_upgrade.c
+  bt_stat.c
+  bt_split.c
+  bt_search.c
+  bt_rsearch.c
+  bt_recno.c
+  bt_reclaim.c
+  bt_rec.c
+  bt_put.c
+  bt_open.c
+  bt_method.c
+  bt_delete.c
+  bt_cursor.c
+  bt_curadj.c
+  bt_conv.c
+  bt_compress.c
+  bt_compare.c
+  Generating Code...
+  Compiling...
+  bt_compact.c
+  blob_util.c
+  blob_stream.c
+  blob_page.c
+  blob_fileops.c
+  aes_method.c
+  Generating Code...
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\src\db\db_conv.c(563,40): warning C4018: '<=': signed/unsigned mismatch
+  cxx_txn.cpp
+cl : command line warning D9035: option 'Gm' has been deprecated and will be removed in a future release
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdint.h(48,1): warning C4005: 'INT64_MIN': macro redefinition
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\clib_port.h(68): message : see previous definition of 'INT64_MIN'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdint.h(52,1): warning C4005: 'INT64_MAX': macro redefinition
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\clib_port.h(67): message : see previous definition of 'INT64_MAX'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdint.h(54,1): warning C4005: 'UINT16_MAX': macro redefinition
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\clib_port.h(6): message : see previous definition of 'UINT16_MAX'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdint.h(55,1): warning C4005: 'UINT32_MAX': macro redefinition
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\clib_port.h(9): message : see previous definition of 'UINT32_MAX'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdint.h(56,1): warning C4005: 'UINT64_MAX': macro redefinition
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\clib_port.h(69): message : see previous definition of 'UINT64_MAX'
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\db_cxx.h(1494,1): warning C4275: non dll-interface class 'std::exception' used as base for dll-interface class 'DbException'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vcruntime_exception.h(45): message : see declaration of 'std::exception'
+  cxx_site.cpp
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\db_cxx.h(1493): message : see declaration of 'DbException'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdint.h(48,1): warning C4005: 'INT64_MIN': macro redefinition
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\clib_port.h(68): message : see previous definition of 'INT64_MIN'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdint.h(52,1): warning C4005: 'INT64_MAX': macro redefinition
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\clib_port.h(67): message : see previous definition of 'INT64_MAX'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdint.h(54,1): warning C4005: 'UINT16_MAX': macro redefinition
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\clib_port.h(6): message : see previous definition of 'UINT16_MAX'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdint.h(55,1): warning C4005: 'UINT32_MAX': macro redefinition
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\clib_port.h(9): message : see previous definition of 'UINT32_MAX'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdint.h(56,1): warning C4005: 'UINT64_MAX': macro redefinition
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\clib_port.h(69): message : see previous definition of 'UINT64_MAX'
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\db_cxx.h(1494,1): warning C4275: non dll-interface class 'std::exception' used as base for dll-interface class 'DbException'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vcruntime_exception.h(45): message : see declaration of 'std::exception'
+  cxx_seq.cpp
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\db_cxx.h(1493): message : see declaration of 'DbException'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdint.h(48,1): warning C4005: 'INT64_MIN': macro redefinition
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\clib_port.h(68): message : see previous definition of 'INT64_MIN'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdint.h(52,1): warning C4005: 'INT64_MAX': macro redefinition
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\clib_port.h(67): message : see previous definition of 'INT64_MAX'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdint.h(54,1): warning C4005: 'UINT16_MAX': macro redefinition
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\clib_port.h(6): message : see previous definition of 'UINT16_MAX'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdint.h(55,1): warning C4005: 'UINT32_MAX': macro redefinition
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\clib_port.h(9): message : see previous definition of 'UINT32_MAX'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdint.h(56,1): warning C4005: 'UINT64_MAX': macro redefinition
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\clib_port.h(69): message : see previous definition of 'UINT64_MAX'
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\db_cxx.h(1494,1): warning C4275: non dll-interface class 'std::exception' used as base for dll-interface class 'DbException'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vcruntime_exception.h(45): message : see declaration of 'std::exception'
+  cxx_multi.cpp
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\db_cxx.h(1493): message : see declaration of 'DbException'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdint.h(48,1): warning C4005: 'INT64_MIN': macro redefinition
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\clib_port.h(68): message : see previous definition of 'INT64_MIN'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdint.h(52,1): warning C4005: 'INT64_MAX': macro redefinition
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\clib_port.h(67): message : see previous definition of 'INT64_MAX'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdint.h(54,1): warning C4005: 'UINT16_MAX': macro redefinition
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\clib_port.h(6): message : see previous definition of 'UINT16_MAX'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdint.h(55,1): warning C4005: 'UINT32_MAX': macro redefinition
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\clib_port.h(9): message : see previous definition of 'UINT32_MAX'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdint.h(56,1): warning C4005: 'UINT64_MAX': macro redefinition
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\clib_port.h(69): message : see previous definition of 'UINT64_MAX'
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\db_cxx.h(1494,1): warning C4275: non dll-interface class 'std::exception' used as base for dll-interface class 'DbException'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vcruntime_exception.h(45): message : see declaration of 'std::exception'
+  cxx_mpool.cpp
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\db_cxx.h(1493): message : see declaration of 'DbException'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdint.h(48,1): warning C4005: 'INT64_MIN': macro redefinition
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\clib_port.h(68): message : see previous definition of 'INT64_MIN'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdint.h(52,1): warning C4005: 'INT64_MAX': macro redefinition
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\clib_port.h(67): message : see previous definition of 'INT64_MAX'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdint.h(54,1): warning C4005: 'UINT16_MAX': macro redefinition
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\clib_port.h(6): message : see previous definition of 'UINT16_MAX'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdint.h(55,1): warning C4005: 'UINT32_MAX': macro redefinition
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\clib_port.h(9): message : see previous definition of 'UINT32_MAX'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdint.h(56,1): warning C4005: 'UINT64_MAX': macro redefinition
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\clib_port.h(69): message : see previous definition of 'UINT64_MAX'
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\db_cxx.h(1494,1): warning C4275: non dll-interface class 'std::exception' used as base for dll-interface class 'DbException'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vcruntime_exception.h(45): message : see declaration of 'std::exception'
+  cxx_logc.cpp
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\db_cxx.h(1493): message : see declaration of 'DbException'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdint.h(48,1): warning C4005: 'INT64_MIN': macro redefinition
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\clib_port.h(68): message : see previous definition of 'INT64_MIN'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdint.h(52,1): warning C4005: 'INT64_MAX': macro redefinition
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\clib_port.h(67): message : see previous definition of 'INT64_MAX'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdint.h(54,1): warning C4005: 'UINT16_MAX': macro redefinition
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\clib_port.h(6): message : see previous definition of 'UINT16_MAX'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdint.h(55,1): warning C4005: 'UINT32_MAX': macro redefinition
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\clib_port.h(9): message : see previous definition of 'UINT32_MAX'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdint.h(56,1): warning C4005: 'UINT64_MAX': macro redefinition
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\clib_port.h(69): message : see previous definition of 'UINT64_MAX'
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\db_cxx.h(1494,1): warning C4275: non dll-interface class 'std::exception' used as base for dll-interface class 'DbException'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vcruntime_exception.h(45): message : see declaration of 'std::exception'
+  cxx_lock.cpp
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\db_cxx.h(1493): message : see declaration of 'DbException'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdint.h(48,1): warning C4005: 'INT64_MIN': macro redefinition
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\clib_port.h(68): message : see previous definition of 'INT64_MIN'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdint.h(52,1): warning C4005: 'INT64_MAX': macro redefinition
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\clib_port.h(67): message : see previous definition of 'INT64_MAX'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdint.h(54,1): warning C4005: 'UINT16_MAX': macro redefinition
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\clib_port.h(6): message : see previous definition of 'UINT16_MAX'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdint.h(55,1): warning C4005: 'UINT32_MAX': macro redefinition
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\clib_port.h(9): message : see previous definition of 'UINT32_MAX'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdint.h(56,1): warning C4005: 'UINT64_MAX': macro redefinition
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\clib_port.h(69): message : see previous definition of 'UINT64_MAX'
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\db_cxx.h(1494,1): warning C4275: non dll-interface class 'std::exception' used as base for dll-interface class 'DbException'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vcruntime_exception.h(45): message : see declaration of 'std::exception'
+  cxx_except.cpp
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\db_cxx.h(1493): message : see declaration of 'DbException'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdint.h(48,1): warning C4005: 'INT64_MIN': macro redefinition
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\clib_port.h(68): message : see previous definition of 'INT64_MIN'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdint.h(52,1): warning C4005: 'INT64_MAX': macro redefinition
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\clib_port.h(67): message : see previous definition of 'INT64_MAX'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdint.h(54,1): warning C4005: 'UINT16_MAX': macro redefinition
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\clib_port.h(6): message : see previous definition of 'UINT16_MAX'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdint.h(55,1): warning C4005: 'UINT32_MAX': macro redefinition
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\clib_port.h(9): message : see previous definition of 'UINT32_MAX'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdint.h(56,1): warning C4005: 'UINT64_MAX': macro redefinition
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\clib_port.h(69): message : see previous definition of 'UINT64_MAX'
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\db_cxx.h(1494,1): warning C4275: non dll-interface class 'std::exception' used as base for dll-interface class 'DbException'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vcruntime_exception.h(45): message : see declaration of 'std::exception'
+  cxx_env.cpp
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\db_cxx.h(1493): message : see declaration of 'DbException'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdint.h(48,1): warning C4005: 'INT64_MIN': macro redefinition
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\clib_port.h(68): message : see previous definition of 'INT64_MIN'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdint.h(52,1): warning C4005: 'INT64_MAX': macro redefinition
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\clib_port.h(67): message : see previous definition of 'INT64_MAX'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdint.h(54,1): warning C4005: 'UINT16_MAX': macro redefinition
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\clib_port.h(6): message : see previous definition of 'UINT16_MAX'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdint.h(55,1): warning C4005: 'UINT32_MAX': macro redefinition
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\clib_port.h(9): message : see previous definition of 'UINT32_MAX'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdint.h(56,1): warning C4005: 'UINT64_MAX': macro redefinition
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\clib_port.h(69): message : see previous definition of 'UINT64_MAX'
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\db_cxx.h(1494,1): warning C4275: non dll-interface class 'std::exception' used as base for dll-interface class 'DbException'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vcruntime_exception.h(45): message : see declaration of 'std::exception'
+  cxx_dbt.cpp
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\db_cxx.h(1493): message : see declaration of 'DbException'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdint.h(48,1): warning C4005: 'INT64_MIN': macro redefinition
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\clib_port.h(68): message : see previous definition of 'INT64_MIN'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdint.h(52,1): warning C4005: 'INT64_MAX': macro redefinition
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\clib_port.h(67): message : see previous definition of 'INT64_MAX'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdint.h(54,1): warning C4005: 'UINT16_MAX': macro redefinition
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\clib_port.h(6): message : see previous definition of 'UINT16_MAX'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdint.h(55,1): warning C4005: 'UINT32_MAX': macro redefinition
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\clib_port.h(9): message : see previous definition of 'UINT32_MAX'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdint.h(56,1): warning C4005: 'UINT64_MAX': macro redefinition
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\clib_port.h(69): message : see previous definition of 'UINT64_MAX'
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\db_cxx.h(1494,1): warning C4275: non dll-interface class 'std::exception' used as base for dll-interface class 'DbException'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vcruntime_exception.h(45): message : see declaration of 'std::exception'
+  cxx_dbstream.cpp
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\db_cxx.h(1493): message : see declaration of 'DbException'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdint.h(48,1): warning C4005: 'INT64_MIN': macro redefinition
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\clib_port.h(68): message : see previous definition of 'INT64_MIN'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdint.h(52,1): warning C4005: 'INT64_MAX': macro redefinition
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\clib_port.h(67): message : see previous definition of 'INT64_MAX'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdint.h(54,1): warning C4005: 'UINT16_MAX': macro redefinition
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\clib_port.h(6): message : see previous definition of 'UINT16_MAX'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdint.h(55,1): warning C4005: 'UINT32_MAX': macro redefinition
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\clib_port.h(9): message : see previous definition of 'UINT32_MAX'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdint.h(56,1): warning C4005: 'UINT64_MAX': macro redefinition
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\clib_port.h(69): message : see previous definition of 'UINT64_MAX'
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\db_cxx.h(1494,1): warning C4275: non dll-interface class 'std::exception' used as base for dll-interface class 'DbException'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vcruntime_exception.h(45): message : see declaration of 'std::exception'
+  cxx_dbc.cpp
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\db_cxx.h(1493): message : see declaration of 'DbException'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdint.h(48,1): warning C4005: 'INT64_MIN': macro redefinition
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\clib_port.h(68): message : see previous definition of 'INT64_MIN'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdint.h(52,1): warning C4005: 'INT64_MAX': macro redefinition
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\clib_port.h(67): message : see previous definition of 'INT64_MAX'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdint.h(54,1): warning C4005: 'UINT16_MAX': macro redefinition
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\clib_port.h(6): message : see previous definition of 'UINT16_MAX'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdint.h(55,1): warning C4005: 'UINT32_MAX': macro redefinition
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\clib_port.h(9): message : see previous definition of 'UINT32_MAX'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdint.h(56,1): warning C4005: 'UINT64_MAX': macro redefinition
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\clib_port.h(69): message : see previous definition of 'UINT64_MAX'
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\db_cxx.h(1494,1): warning C4275: non dll-interface class 'std::exception' used as base for dll-interface class 'DbException'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vcruntime_exception.h(45): message : see declaration of 'std::exception'
+  cxx_db.cpp
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\db_cxx.h(1493): message : see declaration of 'DbException'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdint.h(48,1): warning C4005: 'INT64_MIN': macro redefinition
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\clib_port.h(68): message : see previous definition of 'INT64_MIN'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdint.h(52,1): warning C4005: 'INT64_MAX': macro redefinition
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\clib_port.h(67): message : see previous definition of 'INT64_MAX'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdint.h(54,1): warning C4005: 'UINT16_MAX': macro redefinition
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\clib_port.h(6): message : see previous definition of 'UINT16_MAX'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdint.h(55,1): warning C4005: 'UINT32_MAX': macro redefinition
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\clib_port.h(9): message : see previous definition of 'UINT32_MAX'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdint.h(56,1): warning C4005: 'UINT64_MAX': macro redefinition
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\clib_port.h(69): message : see previous definition of 'UINT64_MAX'
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\db_cxx.h(1494,1): warning C4275: non dll-interface class 'std::exception' used as base for dll-interface class 'DbException'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vcruntime_exception.h(45): message : see declaration of 'std::exception'
+  cxx_channel.cpp
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\db_cxx.h(1493): message : see declaration of 'DbException'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdint.h(48,1): warning C4005: 'INT64_MIN': macro redefinition
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\clib_port.h(68): message : see previous definition of 'INT64_MIN'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdint.h(52,1): warning C4005: 'INT64_MAX': macro redefinition
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\clib_port.h(67): message : see previous definition of 'INT64_MAX'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdint.h(54,1): warning C4005: 'UINT16_MAX': macro redefinition
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\clib_port.h(6): message : see previous definition of 'UINT16_MAX'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdint.h(55,1): warning C4005: 'UINT32_MAX': macro redefinition
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\clib_port.h(9): message : see previous definition of 'UINT32_MAX'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdint.h(56,1): warning C4005: 'UINT64_MAX': macro redefinition
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\clib_port.h(69): message : see previous definition of 'UINT64_MAX'
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\db_cxx.h(1494,1): warning C4275: non dll-interface class 'std::exception' used as base for dll-interface class 'DbException'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vcruntime_exception.h(45): message : see declaration of 'std::exception'
+  Generating Code...
+C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\db_cxx.h(1493): message : see declaration of 'DbException'
+     Creating library ..\..\build_windows\Win32\Debug\libdb181d.lib and object ..\..\build_windows\Win32\Debug\libdb181d.exp
+  db.vcxproj -> C:\Users\Neel\Documents\School\CMPUT291\Project2\Offline_Dump\db-18.1.32\build_windows\VS15\..\..\build_windows\Win32\Debug\libdb181d.dll
