@@ -179,14 +179,17 @@ def main():
 
     os.system('echo "Creating em.idx"')
     os.system('db_load -f emails_db_load.txt -T -t btree em.idx')
+    os.system('db_dump -p -f emails_db_load em.idx')
     os.system('echo "Completed ✓"')
 
     os.system('echo "Creating da.idx"')
     os.system('db_load -f dates_db_load.txt -T -t btree da.idx')
+    os.system('db_dump -p -f dates_db_load da.idx')
     os.system('echo "Completed ✓"')
 
     os.system('echo "Creating re.idx"')
     os.system('db_load -f recs_db_load.txt -T -t hash re.idx')
+    os.system('db_dump -p -f recs_db_load re.idx')
     os.system('echo "Completed ✓"')
 
     turtle = (r'''
