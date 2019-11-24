@@ -64,8 +64,8 @@ def main():
         row_id = x.find('row').text
         emails_file.write("from-%s:%s\n" % (from_address, row_id))
         emails_file.write("to-%s:%s\n" % (to_address, row_id))
-        emails_file.write("to-%s:%s\n" % (cc_address, row_id))
-        emails_file.write("to-%s:%s\n" % (bcc_address, row_id))
+        emails_file.write("cc-%s:%s\n" % (cc_address, row_id))
+        emails_file.write("bcc-%s:%s\n" % (bcc_address, row_id))
     emails_file.close()
     print("Created ✓")
 
