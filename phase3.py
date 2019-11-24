@@ -34,3 +34,6 @@ def main():
             print(result)
         else:
             break
+
+if __name__ == "__main__":
+    main()
