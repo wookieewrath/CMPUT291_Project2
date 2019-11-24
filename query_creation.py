@@ -51,7 +51,8 @@ for i in range(len(search_terms)):
                         query[search_terms[i-1]].append("".join(search_terms[i] + search_terms[i+1]))
                         subject_body_searches.remove(str(search_terms[i-1]))
                         subject_body_searches.remove(str(search_terms[i]))
-                        subject_body_searches.remove(str(search_terms[i+1]))                        
-
-print(subject_body_searches) # WHERE DO WE WANT TO PUT THE WORDS CONFIDENTIAL% AND STOCK. THIS IS A TEMPORARY LOCATION FOR THEM,
+                        subject_body_searches.remove(str(search_terms[i+1]))     
+                        
+# WHERE DO WE WANT TO PUT THE WORDS CONFIDENTIAL% AND STOCK. THIS IS A TEMPORARY LOCATION FOR THEM.
+print("SEARCH TERMS IN EITHER THE SUBJECT OR BODY:", subject_body_searches) 
 print(query)
