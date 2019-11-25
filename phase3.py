@@ -76,6 +76,7 @@ def dates_search(curs, term):
     term = term[j:]
 
     result = curs.set(bytes(term, 'utf-8'))
+    result_exists = False
 
     if symbol == ':':
         while True:
@@ -86,7 +87,10 @@ def dates_search(curs, term):
                 break
 
     elif symbol == '>':
-        result = curs.next_nodup()
+        if result is None:
+            result = curs.set_range(bytes(term,'utf-8'))
+        else:
+            result = curs.next_nodup()
         while True:
             if result is not None:
                 query_set.add(result[1])
@@ -96,6 +100,10 @@ def dates_search(curs, term):
 
     elif symbol == '<':
         result = curs.prev()
+        if result is None:
+            result = curs.set_range(bytes(term,'utf-8'))
+            result = curs.prev()
+            
         while True:
             if result is not None:
                 query_set.add(result[1])
@@ -105,14 +113,32 @@ def dates_search(curs, term):
                 break
 
     elif symbol == '>=':
+        if result is None:
+            result = curs.set_range(bytes(term,'utf-8'))
+            
         while True:
             if result is not None:
                 query_set.add(result[1])
                 result = curs.next()
             else:
                 break
+        
+        result = curs.next_nodup()
+        
+        while True:
+            if result is not None:
+                query_set.add(result[1])
+                result = curs.next()
+            else:
+                break            
+            
 
     elif symbol == '<=':
+        
+        if result is None:
+            result = curs.set_range(bytes(term,'utf-8'))
+            result = curs.prev()        
+        
         while True:
             if result is not None:
                 query_set.add(result[1])
