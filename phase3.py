@@ -178,7 +178,6 @@ def main():
                         term_set = term_set.intersection(terms_search(terms_curs,term))
                 
                 sets.append(term_set)
-                print(term_set)
                         
                         
                     
@@ -192,7 +191,6 @@ def main():
                         dates_set = dates_set.intersection(dates_search(dates_curs,term))
                 
                 sets.append(dates_set)  
-                print(dates_set,'dates')
                                   
                     
                     
@@ -206,7 +204,6 @@ def main():
                         emails_set = emails_set.intersection(emails_search(emails_curs,term))
                 
                 sets.append(emails_set) 
-                print(emails_set,'emails')
                     
             if database == "subj_or_body":
                 i = 0
@@ -217,8 +214,7 @@ def main():
                     else:
                         body_set = body_set.intersection(body_search(terms_curs,term))
                 
-                sets.append(body_set)
-                print(body_set, ' body set ')                
+                sets.append(body_set)              
 
             j = 0
             for i in sets:
