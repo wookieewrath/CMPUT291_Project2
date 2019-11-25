@@ -60,27 +60,41 @@ for i in range(len(search_terms)):
 print("SEARCH TERMS IN EITHER THE SUBJECT OR BODY:", subject_body_searches) 
 print("QUERY DICTIONARY", query)
 
-email_searches = []
-terms_searches = []
-dates_searches = []
+search_dictionary = {}
 
 for search_term in query:
         if search_term == "to" or search_term == "from" or search_term == "cc" or search_term == "bcc":
                 for value in range(len(query[search_term])):
                         search = search_term + '-' + query[search_term][value][1:]
-                        email_searches.append(search)
+                        if "EMAILS" in search_dictionary:
+                                search_dictionary["EMAILS"].append(search)
+                        else:
+                                search_dictionary["EMAILS"] = [search]
         
         if search_term == "subj" or search_term == "subject" or search_term == "body":
                 for value in range(len(query[search_term])):
                         search = search_term[0] + '-' + query[search_term][value][1:]
-                        terms_searches.append(search)
+                        if "TERMS" in search_dictionary:
+                                search_dictionary["TERMS"].append(search)
+                        else:
+                                search_dictionary["TERMS"] = [search]                        
         
         if search_term == "date":
                 for value in range(len(query[search_term])):
                         search = query[search_term][value]
-                        dates_searches.append(search)
+                        if "DATES" in search_dictionary:
+                                search_dictionary["DATES"].append(search)
+                        else:
+                                search_dictionary["DATES"] = [search]
+        
+if "SUBJ_OR_BODY" in search_dictionary:
+        for word in subject_body_searches:
+                search_dictionary["SUBJ_OR_BODY"].append(word)
+                
+else:
+        search_dictionary["SUBJ_OR_BODY"] = []
+        for word in subject_body_searches:
+                search_dictionary["SUBJ_OR_BODY"].append(word)
+        
+print(search_dictionary)
 
-
-print("EMAIL SEARCHES:", email_searches)
-print("TERMS SEARCHES:", terms_searches)
-print("DATES SEARCHES:", dates_searches)
