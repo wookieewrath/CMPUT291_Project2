@@ -62,13 +62,30 @@ def main():
         cc_address = x.find('cc').text
         bcc_address = x.find('bcc').text
         row_id = x.find('row').text
-        emails_file.write("from-%s:%s\n" % (from_address, row_id))
-        emails_file.write("to-%s:%s\n" % (to_address, row_id))
-        emails_file.write("cc-%s:%s\n" % (cc_address, row_id))
-        emails_file.write("bcc-%s:%s\n" % (bcc_address, row_id))
+        
+        if to_address != None:
+            to_emails = to_address.split(",") 
+            for email in to_emails:
+                emails_file.write("to-%s:%s\n" % (email, row_id))
+        
+        if from_address != None:
+            from_emails = from_address.split(",")
+            for email in from_emails:
+                emails_file.write("to-%s:%s\n" % (email, row_id))
+                
+        if cc_address != None:
+            cc_emails = cc_address.split(",")
+            for email in cc_emails:
+                emails_file.write("to-%s:%s\n" % (email, row_id))
+        
+        if bcc_address != None:
+            bcc_emails = bcc_address.split(",")
+            for email in bcc_emails:
+                emails_file.write("to-%s:%s\n" % (email, row_id))        
+                
     emails_file.close()
     print("Created ✓")
-
+    
     '''******************************************************************************************************
     *                                           Create recs.txt                                             *
     ******************************************************************************************************'''
