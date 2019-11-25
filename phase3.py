@@ -24,16 +24,68 @@ def main():
 
     iter = terms_curs.first()
 
-    result = dates_curs.set(b'2001/05/14')
-    query_set = set()
+    result = dates_curs.set(b'2000/01/12')
+   # query_set = set()
+    query_list = []
     
-    while True:
-        result = dates_curs.next_dup()
-        if result is not None:
-            query_set.add(result[1])
-        else:
-            break
-    print(query_set)
+    #for dates cases
+    symbol = '<='
+    #greater than case
+    if symbol == '=':
+        while True:
+            if result is not None:
+                query_list.append(result[1])
+                result = dates_curs.next_dup()
+            else:
+                break
+    
+    elif symbol == '>':
+        result = dates_curs.next_nodup()
+        while True:
+            if result is not None:
+                query_list.append(result[1])
+                result = dates_curs.next()
+            else:
+                break        
+        
+    
+    elif symbol == '<':
+        result = dates_curs.prev()
+        while True:
+            if result is not None:
+                query_list.append(result[1])
+                result = dates_curs.prev()
+            
+            else:
+                break
+                
+    elif symbol == '>=':
+        while True:
+            if result is not None:
+                query_list.append(result[1])
+                result = dates_curs.next()
+            else:
+                break         
+        
+    
+    elif symbol == '<=':
+        while True:
+            if result is not None:
+                query_list.append(result[1])
+                result = dates_curs.next_dup()
+            else:
+                break
+            
+        result = dates_curs.prev_nodup()
+        while True:
+            if result is not None:
+                query_list.append(result[1])
+                result = dates_curs.prev()
+            else:
+                break
+    
+    
+    print(query_list)
     
     
 main()
