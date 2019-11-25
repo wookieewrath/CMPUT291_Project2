@@ -62,39 +62,41 @@ print("QUERY DICTIONARY", query)
 
 search_dictionary = {}
 
+#For every search_term in the query
 for search_term in query:
         if search_term == "to" or search_term == "from" or search_term == "cc" or search_term == "bcc":
                 for value in range(len(query[search_term])):
                         search = search_term + '-' + query[search_term][value][1:]
-                        if "EMAILS" in search_dictionary:
-                                search_dictionary["EMAILS"].append(search)
+                        if "emails_curs" in search_dictionary:
+                                search_dictionary["emails_curs"].append(search)
                         else:
-                                search_dictionary["EMAILS"] = [search]
+                                search_dictionary["emails_curs"] = [search]
         
         if search_term == "subj" or search_term == "subject" or search_term == "body":
                 for value in range(len(query[search_term])):
                         search = search_term[0] + '-' + query[search_term][value][1:]
-                        if "TERMS" in search_dictionary:
-                                search_dictionary["TERMS"].append(search)
+                        if "terms_curs" in search_dictionary:
+                                search_dictionary["terms_curs"].append(search)
                         else:
-                                search_dictionary["TERMS"] = [search]                        
+                                search_dictionary["terms_curs"] = [search]                        
         
         if search_term == "date":
                 for value in range(len(query[search_term])):
                         search = query[search_term][value]
-                        if "DATES" in search_dictionary:
-                                search_dictionary["DATES"].append(search)
+                        if "dates_curs" in search_dictionary:
+                                search_dictionary["dates_curs"].append(search)
                         else:
-                                search_dictionary["DATES"] = [search]
-        
-if "SUBJ_OR_BODY" in search_dictionary:
-        for word in subject_body_searches:
-                search_dictionary["SUBJ_OR_BODY"].append(word)
-                
-else:
-        search_dictionary["SUBJ_OR_BODY"] = []
-        for word in subject_body_searches:
-                search_dictionary["SUBJ_OR_BODY"].append(word)
+                                search_dictionary["dates_curs"] = [search]
+
+if len(subject_body_searches) != 0:
+        if "subj_or_body" in search_dictionary:
+                for word in subject_body_searches:
+                        search_dictionary["subj_or_body"].append(word)
+                                        
+        else:
+                search_dictionary["subj_or_body"] = []
+                for word in subject_body_searches:
+                        search_dictionary["subj_or_body"].append(word)
         
 print(search_dictionary)
 
