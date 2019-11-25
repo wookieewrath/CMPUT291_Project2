@@ -353,7 +353,7 @@ def main():
             for row in some_list:
                 result = recs_curs.set(row)
                 print(result[1].decode("utf-8"))
-                print("\n")
+                print("")
 
         elif mode == "brief":
             print("")
