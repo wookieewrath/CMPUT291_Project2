@@ -101,8 +101,32 @@ def emails_search(curs, term):
             break
     
     return query_set
-                      
 
+def body_search(curs, term):
+    
+    term_1 = 'b-' + term
+    term_2 = 's-' + term
+    
+    result = curs.set(bytes(term_1,'utf-8'))
+    query_set = set()
+    
+    while True:
+        if result is not None:
+            query_set.add(result[1])
+            result = curs.next_dup()
+        else:
+            break    
+    
+    result = curs.set(bytes(term_2,'utf-8'))
+    
+    while True:
+        if result is not None:
+            query_set.add(result[1])
+            result = curs.next_dup()
+        else:
+            break       
+                      
+    return query_set
 
 def main():
 
@@ -153,7 +177,8 @@ def main():
                     else:
                         term_set = term_set.intersection(terms_search(terms_curs,term))
                 
-                sets.append(term_set,'terms')
+                sets.append(term_set)
+                print(term_set)
                         
                         
                     
@@ -184,9 +209,32 @@ def main():
                 print(emails_set,'emails')
                     
             if database == "subj_or_body":
-                pass               
+                i = 0
+                for term in search_dict[database]:
+                    if i == 0:
+                        body_set = body_search(terms_curs, term)
+                        i += 1
+                    else:
+                        body_set = body_set.intersection(body_search(terms_curs,term))
+                
+                sets.append(body_set)
+                print(body_set, ' body set ')                
 
+            j = 0
+            for i in sets:
+                if j == 0:
+                    final_set = i
+                    j+=1
+                    
+                else: 
+                    final_set = final_set.intersection(i)
+            print(final_set)
+            
+            for index in final_set:
+                result = recs_curs.set(index)
+                print(result[1])
 
 if __name__ == "__main__":
     main()
+
 
