@@ -5,6 +5,7 @@ from query_creation import query_creation
 *                                  Next Lexicographic Order (sorta?)                                    *
 ******************************************************************************************************'''
 
+# Returns the "next larges" lexicographic string of an input string
 
 def next_lex(mystring):
     for x in range(len(mystring) - 1, -1, -1):
@@ -21,6 +22,7 @@ def next_lex(mystring):
 *                                            Terms Search                                               *
 ******************************************************************************************************'''
 
+# Finds any matching row_ids in the te.idx file
 
 def terms_search(curs, term):
     result = curs.set(bytes(term, 'utf-8'))
@@ -40,6 +42,7 @@ def terms_search(curs, term):
 *                                            Terms Search Wild                                          *
 ******************************************************************************************************'''
 
+# Finds any matching row_ids with a wild card search in the te.idx file
 
 def terms_search_wild(curs, term):
     result = curs.set_range(bytes(term, 'utf-8'))
@@ -61,6 +64,7 @@ def terms_search_wild(curs, term):
 *                                            Dates Search                                               *
 ******************************************************************************************************'''
 
+# Finds any matching row_ids in the da.idx file
 
 def dates_search(curs, term):
     symbol = ''
@@ -138,6 +142,8 @@ def dates_search(curs, term):
 *                                            Emails Search                                              *
 ******************************************************************************************************'''
 
+# Finds any matching row_ids in the em.idx file
+
 
 def emails_search(curs, term):
     result = curs.set(bytes(term, 'utf-8'))
@@ -156,6 +162,8 @@ def emails_search(curs, term):
 '''******************************************************************************************************
 *                                             Body Search                                               *
 ******************************************************************************************************'''
+
+# Finds any matching row_ids that have a term in the body or subject fields of the te.idx database
 
 
 def body_search(curs, term):
@@ -188,6 +196,8 @@ def body_search(curs, term):
 *                                          Body Search Wild                                             *
 ******************************************************************************************************'''
 
+# Finds any matching row_ids that have a term in the body or subject fields of the te.idx database,
+# With wild card matches
 
 def body_search_wild(curs, term):
     term_1 = 'b-' + term
