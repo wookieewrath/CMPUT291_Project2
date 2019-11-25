@@ -14,5 +14,5 @@ def foo(mystring):
             return mystring
 
 
-x = foo("b-hav")
+x = foo("b-z")
 print(x)
