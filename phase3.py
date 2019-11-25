@@ -150,9 +150,9 @@ def main():
     emails_curs = emails_database.cursor()
     recs_curs = recs_database.cursor()
     
-    print("Welcome to the database!")
-    print("Typing 'output=full' will output full records")
-    print("Typing 'output=brief' will output Row ID and Subject")
+    print("\nWelcome to the database!")
+    print(">Entering 'output=full' will output full records")
+    print(">Entering 'output=brief' will output Row ID and Subject\n")
     
     mode = "brief"
     
@@ -247,8 +247,13 @@ def main():
                     print(result[1].decode("utf-8"))
                     
             elif mode=="brief":
-                # to do :(
-                pass
+                for row in some_list:
+                    result = recs_curs.set(row)
+                    
+                    subject = result[1].decode("utf-8")
+                    subject = subject[subject.find("<subj>")+6 : subject.find("</subj>")]                                  
+                    print(result[0].decode("utf-8"), end = '')
+                    print(" " + subject)
                     
                     
 
