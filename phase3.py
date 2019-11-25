@@ -5,7 +5,6 @@ from query_creation import query_creation
 *                                  Next Lexicographic Order (sorta?)                                    *
 ******************************************************************************************************'''
 
-# Returns the "next larges" lexicographic string of an input string
 
 def next_lex(mystring):
     for x in range(len(mystring) - 1, -1, -1):
@@ -22,7 +21,6 @@ def next_lex(mystring):
 *                                            Terms Search                                               *
 ******************************************************************************************************'''
 
-# Finds any matching row_ids in the te.idx file
 
 def terms_search(curs, term):
     result = curs.set(bytes(term, 'utf-8'))
@@ -42,7 +40,6 @@ def terms_search(curs, term):
 *                                            Terms Search Wild                                          *
 ******************************************************************************************************'''
 
-# Finds any matching row_ids with a wild card search in the te.idx file
 
 def terms_search_wild(curs, term):
     result = curs.set_range(bytes(term, 'utf-8'))
@@ -64,7 +61,6 @@ def terms_search_wild(curs, term):
 *                                            Dates Search                                               *
 ******************************************************************************************************'''
 
-# Finds any matching row_ids in the da.idx file
 
 def dates_search(curs, term):
     symbol = ''
@@ -142,8 +138,6 @@ def dates_search(curs, term):
 *                                            Emails Search                                              *
 ******************************************************************************************************'''
 
-# Finds any matching row_ids in the em.idx file
-
 
 def emails_search(curs, term):
     result = curs.set(bytes(term, 'utf-8'))
@@ -162,8 +156,6 @@ def emails_search(curs, term):
 '''******************************************************************************************************
 *                                             Body Search                                               *
 ******************************************************************************************************'''
-
-# Finds any matching row_ids that have a term in the body or subject fields of the te.idx database
 
 
 def body_search(curs, term):
@@ -196,8 +188,6 @@ def body_search(curs, term):
 *                                          Body Search Wild                                             *
 ******************************************************************************************************'''
 
-# Finds any matching row_ids that have a term in the body or subject fields of the te.idx database,
-# With wild card matches
 
 def body_search_wild(curs, term):
     term_1 = 'b-' + term
@@ -217,12 +207,14 @@ def body_search_wild(curs, term):
 
     result = curs.set(bytes(term_2, 'utf-8'))
 
-    while result is not True:
+    while result is not None:
         if str(result[0].decode("utf-8")) >= end_condition2:
             break
         else:
             query_set.add(result[1])
             result = curs.next()
+    
+    return query_set
 
 
 '''******************************************************************************************************
@@ -286,10 +278,18 @@ def main():
                 i = 0
                 for term in search_dict[database]:
                     if i == 0:
-                        term_set = terms_search(terms_curs, term)
+                        if '%' in term:
+                            term = term[:-1]
+                            term_set = terms_search_wild(terms_curs, term)
+                        else:
+                            term_set = terms_search(terms_curs, term)
                         i += 1
                     else:
-                        term_set = term_set.intersection(terms_search(terms_curs, term))
+                        if '%' in term:
+                            term = term[:-1]
+                            term_set = term_set.intersection(terms_search(terms_curs, term))
+                        else:
+                            term_set = term_set.intersection(terms_search(terms_curs, term))
 
                 sets.append(term_set)
 
@@ -319,10 +319,18 @@ def main():
                 i = 0
                 for term in search_dict[database]:
                     if i == 0:
-                        body_set = body_search(terms_curs, term)
+                        if '%' in term:
+                            term = term[:-1]
+                            body_set = body_search_wild(terms_curs,term)
+                        else:
+                            body_set = body_search(terms_curs, term)
                         i += 1
                     else:
-                        body_set = body_set.intersection(body_search(terms_curs, term))
+                        if '%' in term:
+                            term = term[:-1]
+                            body_set = body_set.intersection(body_search_wild(terms_curs,term))
+                        else:
+                            body_set = body_set.intersection(body_search(terms_curs, term))
 
                 sets.append(body_set)
 
