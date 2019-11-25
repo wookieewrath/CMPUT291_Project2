@@ -266,8 +266,6 @@ def main():
             continue
 
         search_dict = query_creation(foo)
-        print("This is the search dictionary")
-        print(search_dict)
 
         sets = []
 
@@ -346,13 +344,13 @@ def main():
             some_list.sort()
 
             if mode == "full":
-                print("\n")
+                print("")
                 for row in some_list:
                     result = recs_curs.set(row)
                     print(result[1].decode("utf-8"))
 
             elif mode == "brief":
-                print("\n")
+                print("")
                 for row in some_list:
                     result = recs_curs.set(row)
 
