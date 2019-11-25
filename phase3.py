@@ -23,17 +23,17 @@ def main():
     recs_curs = recs_database.cursor()
 
     iter = terms_curs.first()
-    while iter:
-        print(iter)
-        iter = terms_curs.next()
 
     result = dates_curs.set(b'2001/05/14')
+    query_set = set()
+    
     while True:
         result = dates_curs.next_dup()
         if result is not None:
-            print(result)
+            query_set.add(result[1])
         else:
             break
-
-if __name__ == "__main__":
-    main()
+    print(query_set)
+    
+    
+main()
