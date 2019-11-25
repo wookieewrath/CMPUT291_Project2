@@ -2,7 +2,7 @@
 #Each entry in the dictionary will have the following format:
 #'SEARCH_KEY' : 'OPERATOR''SEARCH_VALUE'
 #Where the operator before the search value can be: ":", "<", or ">" since we need these fields to appropriately query the database.
-search_string = input("Enter a string to search by: ")
+search_string = input("Enter a string to search by: ").lower()
 decomposed_string = list(search_string) #Will decompose the original search_string into a list of its individual characters.
 query = {} #Initialize the query dictionary
 
