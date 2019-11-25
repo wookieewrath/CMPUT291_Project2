@@ -1,4 +1,16 @@
 from bsddb3 import db
+from query_creation import query_creation
+
+
+def terms_search(curs, term):
+    pass
+
+def dates_search(curs, term):
+    pass
+
+def emails_search(curs, term):
+    pass
+
 
 def main():
 
@@ -21,71 +33,34 @@ def main():
     dates_curs = dates_database.cursor()
     emails_curs = emails_database.cursor()
     recs_curs = recs_database.cursor()
-
-    iter = terms_curs.first()
-
-    result = dates_curs.set(b'2000/01/12')
-   # query_set = set()
-    query_list = []
     
-    #for dates cases
-    symbol = '<='
-    #greater than case
-    if symbol == '=':
-        while True:
-            if result is not None:
-                query_list.append(result[1])
-                result = dates_curs.next_dup()
-            else:
-                break
+    print("Welcome to the database!")
+    print("Typing 'output=full' will output full records")
+    print("Typing 'output=brief' will output Row ID and Subject")
     
-    elif symbol == '>':
-        result = dates_curs.next_nodup()
-        while True:
-            if result is not None:
-                query_list.append(result[1])
-                result = dates_curs.next()
-            else:
-                break        
+    while True:
+        foo = input("Please enter a search query: ")
         
-    
-    elif symbol == '<':
-        result = dates_curs.prev()
-        while True:
-            if result is not None:
-                query_list.append(result[1])
-                result = dates_curs.prev()
-            
-            else:
-                break
-                
-    elif symbol == '>=':
-        while True:
-            if result is not None:
-                query_list.append(result[1])
-                result = dates_curs.next()
-            else:
-                break         
+        search_dict = query_creation(foo)
         
-    
-    elif symbol == '<=':
-        while True:
-            if result is not None:
-                query_list.append(result[1])
-                result = dates_curs.next_dup()
-            else:
-                break
-            
-        result = dates_curs.prev_nodup()
-        while True:
-            if result is not None:
-                query_list.append(result[1])
-                result = dates_curs.prev()
-            else:
-                break
-    
-    
-    print(query_list)
-    
-    
-main()
+        
+        
+        for database in search_dict:
+            if database == "terms_curs":
+                for term in search_dict[database]:
+                    terms_search(terms_curs, term)
+                    
+            if database == "dates_curs":
+                for term in search_dict[database]:
+                    dates_search(dates_curs, term)
+                    
+            if database == "emails_curs":
+                for term in search_dict[database]:
+                    emails_search(emails_curs, term)
+                    
+            if database == "subj_or_body":
+                pass               
+
+
+if __name__ == "__main__":
+    main()
