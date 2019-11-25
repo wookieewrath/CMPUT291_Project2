@@ -15,8 +15,6 @@ def terms_search(curs, term):
     
     return query_set    
     
-    
-
 def dates_search(curs, term):
     symbol = ''
     length = len(term)
@@ -134,7 +132,6 @@ def main():
     
     while True:
         foo = input("Please enter a search query: ")
-        i = 0
         
         if foo == 'stop':
             break
@@ -143,20 +140,48 @@ def main():
         print("This is the search dictionary")
         print(search_dict)
         
+        sets = []
+        
         for database in search_dict:
+            
             if database == "terms_curs":
+                i = 0
                 for term in search_dict[database]:
-                    terms_search(terms_curs, term)
-
-                    
+                    if i == 0:
+                        term_set = terms_search(terms_curs, term)
+                        i += 1
+                    else:
+                        term_set = term_set.intersection(terms_search(terms_curs,term))
+                
+                sets.append(term_set,'terms')
+                        
+                        
                     
             if database == "dates_curs":
+                i = 0
                 for term in search_dict[database]:
-                    print(dates_search(dates_curs, term))
+                    if i == 0:
+                        dates_set = dates_search(dates_curs, term)
+                        i += 1
+                    else:
+                        dates_set = dates_set.intersection(dates_search(dates_curs,term))
+                
+                sets.append(dates_set)  
+                print(dates_set,'dates')
+                                  
+                    
                     
             if database == "emails_curs":
+                i = 0
                 for term in search_dict[database]:
-                    print(emails_search(emails_curs, term))
+                    if i == 0:
+                        emails_set = emails_search(emails_curs, term)
+                        i += 1
+                    else:
+                        emails_set = emails_set.intersection(emails_search(emails_curs,term))
+                
+                sets.append(emails_set) 
+                print(emails_set,'emails')
                     
             if database == "subj_or_body":
                 pass               
@@ -164,3 +189,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
