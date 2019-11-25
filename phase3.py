@@ -250,7 +250,7 @@ def main():
     mode = "brief"
 
     while True:
-        foo = input("Please enter a search query: ")
+        foo = input("\nPlease enter a search query: ")
 
         if foo == 'EXIT':
             break
