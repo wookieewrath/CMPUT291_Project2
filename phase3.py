@@ -185,6 +185,37 @@ def body_search(curs, term):
 
 
 '''******************************************************************************************************
+*                                          Body Search Wild                                             *
+******************************************************************************************************'''
+
+
+def body_search_wild(curs, term):
+    term_1 = 'b-' + term
+    term_2 = 's-' + term
+    end_condition1 = next_lex(term1)
+    end_condition2 = next_lex(term2)
+
+    result = curs.set_range(bytes(term_1, 'utf-8'))
+    query_set = set()
+
+    while result is not None:
+        if str(result[0].decode("utf-8")) >= end_condition:
+            break
+        else:
+            query_set.add(result[1])
+            result = curs.next()
+
+    result = curs.set(bytes(term_2, 'utf-8'))
+
+    while True:
+        if str(result[0].decode("utf-8")) >= end_condition:
+            break
+        else:
+            query_set.add(result[1])
+            result = curs.next()
+
+
+'''******************************************************************************************************
 *                                                 MAIN                                                  *
 ******************************************************************************************************'''
 
