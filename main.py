@@ -144,7 +144,7 @@ def main():
     terms = open('terms.txt', "r")
     terms_db_load = open('terms_db_load.txt', "w+")
     for line in terms:
-        line.replace("\\", "")
+        line = line.replace("\\", "")
         temp = line.split(":")
         terms_db_load.write(temp[0] + "\n" +  temp[1])
     terms.close()
@@ -155,7 +155,7 @@ def main():
     dates = open('dates.txt', "r")
     dates_db_load = open('dates_db_load.txt', "w+")
     for line in dates:
-        line.replace("\\", "")
+        line = line.replace("\\", "")
         temp = line.split(":")
         dates_db_load.write(temp[0] + "\n" +  temp[1])
     dates.close()
@@ -166,7 +166,7 @@ def main():
     emails = open('emails.txt', "r")
     emails_db_load = open('emails_db_load.txt', "w+")
     for line in emails:
-        line.replace("\\", "")
+        line = line.replace("\\", "")
         temp = line.split(":")
         emails_db_load.write(temp[0] + "\n" +  temp[1])
     emails.close()
@@ -177,7 +177,7 @@ def main():
     recs = open('recs.txt', "r")
     recs_db_load = open('recs_db_load.txt', "w+")
     for line in recs:
-        line.replace("\\", "")
+        line = line.replace("\\", "")
         temp = line.split(":<mail>")
         recs_db_load.write(temp[0] + "\n" + "<mail>" + temp[1])
     recs.close()
