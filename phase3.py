@@ -212,14 +212,15 @@ def main():
 
     print("\nWelcome to the database!")
     print(">Entering 'output=full' will output full records")
-    print(">Entering 'output=brief' will output Row ID and Subject\n")
+    print(">Entering 'output=brief' will output Row ID and Subject")
+    print(">Enter 'EXIT' to exit the database\n")
 
     mode = "brief"
 
     while True:
         foo = input("Please enter a search query: ")
 
-        if foo == 'stop':
+        if foo == 'EXIT':
             break
 
         if foo == "output=full":
