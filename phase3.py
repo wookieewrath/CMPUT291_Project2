@@ -74,8 +74,6 @@ def dates_search(curs, term):
             j = i
             break
     term = term[j:]
-    print(term)
-    print(symbol)
 
     result = curs.set(bytes(term, 'utf-8'))
 
@@ -305,10 +303,17 @@ def main():
                 i = 0
                 for term in search_dict[database]:
                     if i == 0:
-                        emails_set = emails_search(emails_curs, term)
+                        if '%' in term:
+                            term = term[:-1]
+                            emails_set = terms_search_wild(emails_curs,term)
+                        else:
+                            emails_set = emails_search(emails_curs, term)
                         i += 1
                     else:
-                        emails_set = emails_set.intersection(emails_search(emails_curs, term))
+                        if '%' in term:
+                            emails_set = emails_set.intersection(terms_search_wild(emails_curs,term))
+                        else:
+                            emails_set = emails_set.intersection(emails_search(emails_curs, term))
 
                 sets.append(emails_set)
 
@@ -341,27 +346,26 @@ def main():
                     final_set = final_set.intersection(i)
 
             some_list = list(final_set)
-            some_list.sort()
+            some_list.sort(key=int)
 
-            if mode == "full":
-                print("")
-                for row in some_list:
-                    result = recs_curs.set(row)
-                    print(result[1].decode("utf-8"))
+        if mode == "full":
+            print("")
+            for row in some_list:
+                result = recs_curs.set(row)
+                print(result[1].decode("utf-8"))
 
-            elif mode == "brief":
-                print("")
-                for row in some_list:
-                    result = recs_curs.set(row)
+        elif mode == "brief":
+            print("")
+            for row in some_list:
+                result = recs_curs.set(row)
 
-                    subject = result[1].decode("utf-8")
+                subject = result[1].decode("utf-8")
 
-                    subject = subject[subject.find("<subj>") + 6: subject.find("</subj>")]
-                    print(result[0].decode("utf-8"), end='')
-                    print(" " + subject)
+                subject = subject[subject.find("<subj>") + 6: subject.find("</subj>")]
+                print(result[0].decode("utf-8"), end='')
+                print(" " + subject)
 
     arnie = r'''
-
         Hasta la vista, baby.
                                ______
                              <((((((\\\
@@ -378,7 +382,6 @@ def main():
                 \ '\ /     \  |     |  _/       /
                  \  \       \ |     | /        /
                   \  \      \        /
-
     '''
     print(arnie)
 
