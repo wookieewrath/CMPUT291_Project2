@@ -37,10 +37,7 @@ def query_creation(user_input):
                                 query[search_terms[i-1]].append("".join(search_terms[i] + search_terms[i+1]))
                                 subject_body_searches.remove(str(search_terms[i-1]))
                                 subject_body_searches.remove(str(search_terms[i]))
-                                subject_body_searches.remove(str(search_terms[i+1]))     
-        
-        print("SEARCH TERMS IN EITHER THE SUBJECT OR BODY:", subject_body_searches) 
-        print("QUERY DICTIONARY", query)
+                                subject_body_searches.remove(str(search_terms[i+1]))
         
         search_dictionary = {}
         
@@ -48,38 +45,38 @@ def query_creation(user_input):
                 if search_term == "to" or search_term == "from" or search_term == "cc" or search_term == "bcc":
                         for value in range(len(query[search_term])):
                                 search = search_term + '-' + query[search_term][value][1:]
-                                if "EMAIL_SEARCHES" in search_dictionary:
-                                        search_dictionary["EMAIL_SEARCHES"].append(search)
+                                if "emails_curs" in search_dictionary:
+                                        search_dictionary["emails_curs"].append(search)
                                 else:
-                                        search_dictionary["EMAIL_SEARCHES"] = [search]
+                                        search_dictionary["emails_curs"] = [search]
                 
                 if search_term == "subj" or search_term == "subject" or search_term == "body":
                         for value in range(len(query[search_term])):
                                 search = search_term[0] + '-' + query[search_term][value][1:]
-                                if "TERMS_SEARCHES" in search_dictionary:
-                                        search_dictionary["TERMS_SEARCHES"].append(search)
+                                if "terms_curs" in search_dictionary:
+                                        search_dictionary["terms_curs"].append(search)
                                 else:
-                                        search_dictionary["TERMS_SEARCHES"] = [search]                        
+                                        search_dictionary["terms_curs"] = [search]                        
                 
                 if search_term == "date":
                         for value in range(len(query[search_term])):
                                 search = query[search_term][value]
-                                if "DATES_SEARCHES" in search_dictionary:
-                                        search_dictionary["DATES_SEARCHES"].append(search)
+                                if "dates_curs" in search_dictionary:
+                                        search_dictionary["dates_curs"].append(search)
                                 else:
-                                        search_dictionary["DATES_SEARCHES"] = [search]
+                                        search_dictionary["dates_curs"] = [search]
 
         if len(subject_body_searches) != 0:
-                if "SUBJ_OR_BODY" in search_dictionary:
+                if "subj_or_body" in search_dictionary:
                         for word in subject_body_searches:
-                                search_dictionary["SUBJ_OR_BODY"].append(word)
+                                search_dictionary["subj_or_body"].append(word)
                                         
                 else:
-                        search_dictionary["SUBJ_OR_BODY"] = []
+                        search_dictionary["subj_or_body"] = []
                         for word in subject_body_searches:
-                                search_dictionary["SUBJ_OR_BODY"].append(word)
+                                search_dictionary["subj_or_body"].append(word)
                 
-        print(search_dictionary)
+        return search_dictionary
 
-query_creation("date:1999/01/01 date>=1999/02/02 date<=1999/03/03")
+
         
