@@ -236,10 +236,9 @@ def main():
                     
                 else: 
                     final_set = final_set.intersection(i)
-            print(final_set)
             
             some_list = list(final_set)
-            print(some_list)
+            some_list.sort()
             
             if mode=="full":
                 for row in some_list:
@@ -251,6 +250,7 @@ def main():
                     result = recs_curs.set(row)
                     
                     subject = result[1].decode("utf-8")
+                    
                     subject = subject[subject.find("<subj>")+6 : subject.find("</subj>")]                                  
                     print(result[0].decode("utf-8"), end = '')
                     print(" " + subject)
