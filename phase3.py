@@ -47,7 +47,6 @@ def terms_search_wild(curs, term):
     query_set = set()
 
     while result is not None:
-        print(str(result[0].decode("utf-8")))
         if str(result[0].decode("utf-8")) >= end_condition:
             break
         else:
@@ -347,11 +346,13 @@ def main():
             some_list.sort()
 
             if mode == "full":
+                print("\n")
                 for row in some_list:
                     result = recs_curs.set(row)
                     print(result[1].decode("utf-8"))
 
             elif mode == "brief":
+                print("\n")
                 for row in some_list:
                     result = recs_curs.set(row)
 
