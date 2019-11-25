@@ -154,6 +154,8 @@ def main():
     print("Typing 'output=full' will output full records")
     print("Typing 'output=brief' will output Row ID and Subject")
     
+    mode = "brief"
+    
     while True:
         foo = input("Please enter a search query: ")
         
