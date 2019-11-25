@@ -160,6 +160,16 @@ def main():
         if foo == 'stop':
             break
         
+        if foo == "output=full":
+            mode = "full"
+            print("Now in full output mode.")
+            continue
+    
+        if foo == "output=brief":
+            mode = "brief"
+            print("Now in brief output mode.")
+            continue        
+        
         search_dict = query_creation(foo)
         print("This is the search dictionary")
         print(search_dict)
@@ -226,11 +236,19 @@ def main():
                     final_set = final_set.intersection(i)
             print(final_set)
             
-            for index in final_set:
-                result = recs_curs.set(index)
-                print(result[1])
+            some_list = list(final_set)
+            print(some_list)
+            
+            if mode=="full":
+                for row in some_list:
+                    result = recs_curs.set(row)
+                    print(result[1].decode("utf-8"))
+                    
+            elif mode=="brief":
+                # to do :(
+                pass
+                    
+                    
 
 if __name__ == "__main__":
     main()
-
-
