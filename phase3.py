@@ -217,7 +217,7 @@ def body_search_wild(curs, term):
 
     result = curs.set(bytes(term_2, 'utf-8'))
 
-    while True:
+    while result is not True:
         if str(result[0].decode("utf-8")) >= end_condition2:
             break
         else:
