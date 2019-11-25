@@ -1,6 +1,22 @@
 from bsddb3 import db
 from query_creation import query_creation
 
+
+'''******************************************************************************************************
+*                                  Next Lexicographic Order (sorta?)                                    *
+******************************************************************************************************'''
+
+def next_lex(mystring):
+    
+    for x in range(len(mystring)-1, -1, -1):
+        if mystring[x] == "z":
+            mystring = mystring[:-1]
+            return foo(mystring)
+        else:
+            last = mystring[-1]
+            mystring = mystring[:-1] + chr(ord(last)+1)
+            return mystring
+
 '''******************************************************************************************************
 *                                            Terms Search                                               *
 ******************************************************************************************************'''
@@ -16,6 +32,28 @@ def terms_search(curs, term):
             result = curs.next_dup()
         else:
             break
+
+    return query_set
+
+
+'''******************************************************************************************************
+*                                            Terms Search Wild                                          *
+******************************************************************************************************'''
+
+
+def terms_search_wild(curs, term):
+    result = curs.set_range(bytes(term, 'utf-8'))
+    end_condition = next_lex(term)
+    query_set = set()
+
+    while(result!=None):
+        print(str(result[0].decode("utf-8")))
+        if(str(result[0].decode("utf-8")) >= end_condition):
+            break
+        else:
+            query_set.add(result[1])
+            result = curs.next()
+
 
     return query_set
 
